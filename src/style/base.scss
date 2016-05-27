@@ -1,0 +1,62 @@
+$text-color: #666;
+$help-color: #999;
+$error-color: #f60;
+
+$primary-color: #2db7f5;
+
+$disable-color: #ccc;
+$font-size-base: 14px;
+$link-color: #2db7f5;
+$link-hover-color: #4DC4F0;
+$font-family:  "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,menu,nav,section {
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+ul,ol{
+  list-style: none;
+}
+
+body{
+  font-family: $font-family;
+  font-size: $font-size-base;
+}
+
+h1,h2,h3,h4,h5{
+  font-weight: 500;
+  line-height: 1.1;
+}
+h1{
+  font-size: 18px;
+}
+h2{
+  font-size: 16px;
+}
+
+
+a{
+  color: $link-color;
+  text-decoration: none;
+  transition: color .3s ease;
+  cursor: pointer;
+  &:hover{
+    color: $link-hover-color
+  }
+}
+
+.clear{
+  &:after{
+    content: " ";
+    display: block;
+    clear:both;
+  }
+}

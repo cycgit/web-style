@@ -3,40 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>测试布局</title>
+    <title>测试表单</title>
     <link rel="stylesheet" href="../build/css/base.css">
     <link rel="stylesheet" href="../build/css/form.css">
     <style>
+        .form{
+            border: 1px solid #ddd;
+            margin: 100px auto;
+            border-radius: 4px;
+            box-shadow: 0 0 6px rgba(0,0,0,.15);
+
+        }
+        h1{
+            margin: 16px;
+        }
+
 
     </style>
 </head>
 <body>
     <div class="form" style="width: 800px">
-
-        <div class="form-line">
-            <label class="label">标题</label>
-            <div class="con-text"></div>
+        <h1 style="text-align: center">这是一个表单</h1>
+        <div class="line">
+            <div class="label">标题:</div>
+            <div class="text">这是文本显示的</div>
         </div>
 
 
-        <div class="form-line">
-            <label class="label">标题</label>
+        <div class="line">
+            <div class="label">最长的长度:</div>
+            <div class="input input-l">
+                <input type="text" placeholder="11位电话号码">
+            </div>
+        </div>
+
+        <div class="line">
+            <div class="label">短长度:</div>
+            <div class="input input-s">
+                <input type="text" placeholder="数字" value="1234">
+            </div>
+        </div>
+
+
+        <div class="line">
+            <div class="label require">默认长度:</div>
             <div class="input">
-                <input type="text" placeholder="标题">
+                <input type="text" placeholder="11位电话号码" value="cycok">
             </div>
         </div>
 
 
 
 
-        <div class="form-line">
-            <label class="label">标题</label>
+
+        <div class="line">
+            <div class="label">第二天控制发货的:</div>
             <div class="input">
-                <input type="text" placeholder="标题">
+                <input type="text" placeholder="18位身份证">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="18位身份证">
+            </div>
+            <div class="split">-</div>
+            <div class="input">
+                <input type="text" placeholder="18位身份证">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="18位身份证">
             </div>
         </div>
         
         
+        <div class="line">
+            <div class="label">选择学校:</div>
+            <select class="select">
+                <option value="">宁波理工学院</option>
+                <option value="">杭州电子科技大学</option>
+            </select>
+            <div class="label2">选择分院:</div>
+            <div class="input"><input type="text"></div>
+        </div>
     </div>
 
 

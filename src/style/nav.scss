@@ -1,0 +1,20 @@
+.menu{
+  width: 220px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+}
+
+.main{
+  display: flex;
+  margin-left: 220px;
+  height: 100vh;
+  flex-direction: column;
+  .content{
+    border: 1px solid #ddd;
+    flex-grow: 1;
+    overflow: scroll;
+  }
+}
+

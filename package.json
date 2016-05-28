@@ -22,7 +22,9 @@
     "url": "https://github.com/cycgit/web-lib/issues"
   },
   "homepage": "https://github.com/cycgit/web-lib#readme",
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^1.0.24"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.1",

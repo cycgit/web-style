@@ -1,23 +1,24 @@
-.table{
+.table {
   width: 100%;
   margin-bottom: 24px;
   border-spacing: 0;
   border-collapse: collapse;
   border: 1px solid #ddd;
 
-  tbody th,td{
+  tbody th, td {
     border-top: 1px solid #ddd;
   }
 
-  thead th{
+  thead th {
     border-bottom: 2px solid #ddd;
   }
-  th,td{
+  th, td {
     text-align: left;
     padding: 8px;
     border-left: 1px solid #ddd;
   }
 }
+
 caption {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -25,26 +26,77 @@ caption {
   text-align: left;
 }
 
-.table-striped{
-  tbody tr:nth-of-type(odd){
+.table-striped {
+  tbody tr:nth-of-type(odd) {
     background-color: #f9f9f9;
   }
 }
-.table-hover{
-  tbody tr:hover{
+
+.table-hover {
+  tbody tr:hover {
     background-color: #f9f9f9;
   }
 }
-.table-sm{
-  th, td{
+
+.table-sm {
+  th, td {
     padding: 5px;
   }
 }
 
-.table-responsive{
-  thead tr{
+.table-responsive {
+  thead tr {
     white-space: nowrap;
   }
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+.pagination {
+  float: right;
+  &:after {
+    content: ' ';
+    clear: both;
+  }
+
+  li {
+    float: left;
+    border-radius: 6px;
+    -webkit-user-select: none;
+    user-select: none;
+    min-width: 28px;
+    height: 28px;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 5px;
+  }
+  a {
+    color: #666;
+    padding: 0 6px;
+    display: inline-block;
+  }
+  .next {
+    &:before {
+      content: "\E600";
+    }
+  }
+  .active {
+
+    background-color: #2db7f5;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+
+  }
+
+  .jump {
+      border: none;
+      &:before{
+        content: "\2022\2022\2022";
+        letter-spacing: 2px;
+      }
+  }
 }

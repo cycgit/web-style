@@ -33,3 +33,37 @@ caption {
   overflow-y: hidden; }
   .table-responsive thead tr {
     white-space: nowrap; }
+
+.pagination {
+  float: right; }
+  .pagination:after {
+    content: ' ';
+    clear: both; }
+  .pagination li {
+    float: left;
+    border-radius: 6px;
+    -webkit-user-select: none;
+    user-select: none;
+    min-width: 28px;
+    height: 28px;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 5px; }
+  .pagination a {
+    color: #666;
+    padding: 0 6px;
+    display: inline-block; }
+  .pagination .next:before {
+    content: "\E600"; }
+  .pagination .active {
+    background-color: #2db7f5;
+    color: #fff; }
+    .pagination .active a {
+      color: #fff; }
+  .pagination .jump {
+    border: none; }
+    .pagination .jump:before {
+      content: "\2022\2022\2022";
+      letter-spacing: 2px; }

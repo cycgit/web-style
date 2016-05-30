@@ -4,6 +4,26 @@
   overflow-x: hidden;
   overflow-y: scroll;
   position: fixed;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+
+  ul{
+    background: darken(#FAFAFA, 5%);
+  }
+  li{
+    padding: 7px 0 7px 52px;
+  }
+  a{
+    color: #666;
+  }
+
+  .menu-top{
+    text-align: center;
+    padding: 20px 0;
+    color: #61b98e;
+  }
+
+
 }
 
 .main{
@@ -12,9 +32,50 @@
   height: 100vh;
   flex-direction: column;
   .content{
-    border: 1px solid #ddd;
     flex-grow: 1;
     overflow: scroll;
   }
 }
 
+.menu-line{
+  display: flex;
+  height: 20px;
+  padding-top: 14px;
+  padding-bottom: 6px;
+  span{
+    flex: 1;
+  }
+  i:first-child{
+    margin-left: 10px;
+    padding: 3px 10px 0;
+    font-size: 12px;
+  }
+  i:last-child{
+    margin-right: 20px;
+    font-size: 12px;
+  }
+}
+.header{
+  height: 64px;
+  box-sizing: border-box;
+  padding: 20px;
+  .left-part{
+    float: left;
+  }
+  ul{
+    float: right;
+  }
+  li{
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .menu{
+    display: none;
+  }
+  .main{
+    margin-left: 0;
+  }
+}

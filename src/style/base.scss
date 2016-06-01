@@ -78,9 +78,14 @@ $allwidth: 100%;
 
 @for $i from 1 through 12{
     .col-#{$i} {
+        float: left;
         width: #{$i * $allwidth/12}
     }
     .col-offset-#{$i}{
+       float: left;
         margin-left: #{$i * $allwidth/12}
     }
+}
+.text-center{
+  text-align: center;
 }

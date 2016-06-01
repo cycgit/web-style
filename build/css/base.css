@@ -51,73 +51,100 @@ a {
     clear: both; }
 
 .col-1 {
+  float: left;
   width: 8.33333%; }
 
 .col-offset-1 {
+  float: left;
   margin-left: 8.33333%; }
 
 .col-2 {
+  float: left;
   width: 16.66667%; }
 
 .col-offset-2 {
+  float: left;
   margin-left: 16.66667%; }
 
 .col-3 {
+  float: left;
   width: 25%; }
 
 .col-offset-3 {
+  float: left;
   margin-left: 25%; }
 
 .col-4 {
+  float: left;
   width: 33.33333%; }
 
 .col-offset-4 {
+  float: left;
   margin-left: 33.33333%; }
 
 .col-5 {
+  float: left;
   width: 41.66667%; }
 
 .col-offset-5 {
+  float: left;
   margin-left: 41.66667%; }
 
 .col-6 {
+  float: left;
   width: 50%; }
 
 .col-offset-6 {
+  float: left;
   margin-left: 50%; }
 
 .col-7 {
+  float: left;
   width: 58.33333%; }
 
 .col-offset-7 {
+  float: left;
   margin-left: 58.33333%; }
 
 .col-8 {
+  float: left;
   width: 66.66667%; }
 
 .col-offset-8 {
+  float: left;
   margin-left: 66.66667%; }
 
 .col-9 {
+  float: left;
   width: 75%; }
 
 .col-offset-9 {
+  float: left;
   margin-left: 75%; }
 
 .col-10 {
+  float: left;
   width: 83.33333%; }
 
 .col-offset-10 {
+  float: left;
   margin-left: 83.33333%; }
 
 .col-11 {
+  float: left;
   width: 91.66667%; }
 
 .col-offset-11 {
+  float: left;
   margin-left: 91.66667%; }
 
 .col-12 {
+  float: left;
   width: 100%; }
 
 .col-offset-12 {
+  float: left;
   margin-left: 100%; }
+
+.text-center {
+  text-align: center; }

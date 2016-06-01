@@ -5,11 +5,14 @@
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   width: 800px; }
 
+.form .row {
+  margin-bottom: 24px; }
+
 input {
   background: #fff none;
   outline: none; }
 
-.input input {
+.input {
   padding: 4px 7px;
   width: 100%;
   height: 28px;
@@ -22,9 +25,9 @@ input {
   box-sizing: border-box;
   -webkit-transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); }
-  .input input:hover {
+  .input:hover {
     border-color: #57c5f7; }
-  .input input:focus {
+  .input:focus {
     box-shadow: 0 0 0 2px rgba(45, 183, 245, 0.2);
     border-color: #57c5f7; }
 
@@ -36,20 +39,11 @@ input {
   font-size: 12px;
   color: #f60; }
 
-.form .label {
-  width: 180px;
-  overflow: hidden;
+.label {
   text-align: right;
   padding-right: 8px;
   height: 28px;
   line-height: 28px; }
-
-.form .label2 {
-  text-align: right;
-  padding-right: 8px;
-  height: 28px;
-  line-height: 28px;
-  padding-left: 16px; }
 
 .form .text {
   height: 28px;
@@ -83,24 +77,3 @@ input {
   outline: 0;
   height: 28px;
   line-height: 28px; }
-
-@media only screen and (max-width: 700px) {
-  .form {
-    width: inherit;
-    box-sizing: border-box;
-    padding: 0 10px;
-    box-shadow: none;
-    border: none; }
-  .line {
-    flex-direction: column; }
-  .form .label {
-    text-align: left;
-    width: 100%; }
-  .form .input {
-    width: 100%; }
-  .split {
-    display: none; }
-  .input input {
-    height: 32px;
-    line-height: 32px;
-    margin-bottom: 4px; } }

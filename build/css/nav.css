@@ -10,6 +10,8 @@
     background: #ededed; }
   .menu li {
     padding: 7px 0 7px 52px; }
+    .menu li :hover {
+      color: #61b98e; }
   .menu a {
     color: #666; }
   .menu .menu-top {
@@ -44,7 +46,8 @@
 .header {
   height: 64px;
   box-sizing: border-box;
-  padding: 20px; }
+  padding: 20px;
+  background-color: #f5f5f5; }
   .header .left-part {
     float: left; }
   .header ul {
@@ -52,6 +55,8 @@
   .header li {
     display: inline-block;
     margin: 0 5px; }
+    .header li a {
+      color: #61b98e; }
 
 @media screen and (max-width: 600px) {
   .menu {

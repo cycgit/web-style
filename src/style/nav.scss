@@ -12,6 +12,9 @@
   }
   li{
     padding: 7px 0 7px 52px;
+    :hover{
+      color: #61b98e;
+    }
   }
   a{
     color: #666;
@@ -59,6 +62,8 @@
   height: 64px;
   box-sizing: border-box;
   padding: 20px;
+  background-color: #f5f5f5;
+
   .left-part{
     float: left;
   }
@@ -68,6 +73,9 @@
   li{
     display: inline-block;
     margin: 0 5px;
+    a{
+      color:#61b98e;
+    }
   }
 }
 

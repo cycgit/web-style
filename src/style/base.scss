@@ -37,10 +37,10 @@ h1,h2,h3,h4,h5{
   line-height: 1.1;
 }
 h1{
-  font-size: 18px;
+  font-size: 20px;
 }
 h2{
-  font-size: 16px;
+  font-size: 18px;
 }
 
 
@@ -60,4 +60,27 @@ a{
     display: block;
     clear:both;
   }
+}
+
+.row{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin:15px auto;
+    &:after{
+        content: " ";
+        display: block;
+        clear:both;
+    }
+}
+$allwidth: 100%;
+
+@for $i from 1 through 12{
+    .col-#{$i} {
+        width: #{$i * $allwidth/12}
+    }
+    .col-offset-#{$i}{
+        margin-left: #{$i * $allwidth/12}
+    }
 }

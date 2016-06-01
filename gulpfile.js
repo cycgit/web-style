@@ -7,8 +7,6 @@ var SASS_PATH = 'src/style/*.scss'
 
 
 gulp.task('sass', function(){
-
-
     gulp.src(SASS_PATH)
         .pipe(sass())
         .pipe(gulp.dest('build/css'))
@@ -26,4 +24,3 @@ gulp.task('publish', function () {
         .pipe(concat('style.css'))
         .pipe(gulp.dest('build/css'));
 })
-

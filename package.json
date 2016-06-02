@@ -4,7 +4,8 @@
   "description": "web style components",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "commit": "sh commit.sh"
   },
   "repository": {
     "type": "git",

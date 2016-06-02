@@ -12,8 +12,8 @@
   border-radius: 6px;
   -webkit-user-select: none;
   user-select: none;
-  -webkit-transition: background-color .3s cubic-bezier(.645, .045, .355, 1);
-  transition: background-color .3s cubic-bezier(.645, .045, .355, 1);
+  // -webkit-transition: background-color .3s cubic-bezier(.645, .045, .355, 1);
+  // transition: background-color .3s cubic-bezier(.645, .045, .355, 1);
   color: #666;
   outline: none;
   background-color: #fff;
@@ -96,4 +96,3 @@ $danger-color: #E01515;
   display: block;
   width: 100%;
 }
-

@@ -14,20 +14,25 @@
       height: 100%;
       display: flex;
       justify-content: center;
-      align-items: center
+      align-items: center;
+
     }
     .login-box{
       width: 400px;
-      height: 400px;
-      box-shadow:  0 0 4px rgba(0, 0, 0, 0.17);
+      /*box-shadow:  0 0 4px rgba(0, 0, 0, 0.17);*/
       box-sizing: border-box;
       background: rgba(255,255,255,0.8);
-      border: 1px solid #E9E9E9;
+      /*border: 1px solid #E9E9E9;*/
       border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 10%
     }
       h1{
         text-align: center;
-        margin: 24px;
+        margin: 40px 24px;
+        color: #61b98e
       }
       .form{
         width: 400px;
@@ -39,6 +44,26 @@
         text-align: center;
         margin-bottom: 24px;
       }
+      .last{
+        margin-bottom: 40px
+      }
+      .label{
+        height: 36px;
+        line-height: 36px
+      }
+      .input{
+        height: 36px
+      }
+      @media only screen and (max-width: 640px) {
+        .login-box{
+          box-shadow: none;
+          border: none;
+          padding: 0 10px
+        }
+
+      }
+
+
     </style>
 </head>
 <body>
@@ -46,20 +71,21 @@
         <div class="login-box">
             <h1>爱到家TMS系统</h1>
 
-            <div class="small">H5创建发布平台</div>
+            <div class="small">H5 创建发布平台</div>
             <div class="row">
                  <label class="label col-2">账号:</label>
-                 <div class="col-8"><input type="text" placeholder="数字" value="1234" class="input"></div>
+                 <div class="col-8"><input type="text" placeholder="数字" value="cycok" class="input"></div>
             </div>
 
 
             <div class="row">
                  <label class="label col-2">密码:</label>
-                 <div class="col-8"><input type="text" placeholder="数字" value="1234" class="input"></div>
+                 <div class="col-8"><input type="password" placeholder="6位以上" value="1234" class="input"></div>
             </div>
 
-            <div class="row text-center">
-              <button class="btn btn-block btn-primary btn-lg">按钮</button>
+            <div class="row text-center last">
+              <div class="col-8 center" ><button class="btn btn-block btn-primary btn-lg">登录</button></div>
+
             </div>
 
         </div>

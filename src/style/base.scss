@@ -73,6 +73,11 @@ a{
         display: block;
         clear:both;
     }
+
+    .center{
+      float: none;;
+      margin: 0 auto;
+    }
 }
 $allwidth: 100%;
 
@@ -88,4 +93,15 @@ $allwidth: 100%;
 }
 .text-center{
   text-align: center;
+}
+
+
+@media only screen and (max-width: 640px) {
+
+  @for $i from 1 through 12{
+      .col-#{$i} {
+          float: left;
+          width: 100%;
+      }
+  }
 }

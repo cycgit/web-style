@@ -52,6 +52,12 @@ input{
   line-height: 28px;
 }
 
+@media only screen and (max-width: 640px) {
+  .label{
+    text-align: left;
+  }
+}
+
 .form .text{
   height: 28px;
   line-height: 28px;
@@ -92,5 +98,3 @@ input{
   height: 28px;
   line-height: 28px;
 }
-
-

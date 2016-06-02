@@ -49,6 +49,9 @@ a {
     content: " ";
     display: block;
     clear: both; }
+  .row .center {
+    float: none;
+    margin: 0 auto; }
 
 .col-1 {
   float: left;
@@ -148,3 +151,41 @@ a {
 
 .text-center {
   text-align: center; }
+
+@media only screen and (max-width: 640px) {
+  .col-1 {
+    float: left;
+    width: 100%; }
+  .col-2 {
+    float: left;
+    width: 100%; }
+  .col-3 {
+    float: left;
+    width: 100%; }
+  .col-4 {
+    float: left;
+    width: 100%; }
+  .col-5 {
+    float: left;
+    width: 100%; }
+  .col-6 {
+    float: left;
+    width: 100%; }
+  .col-7 {
+    float: left;
+    width: 100%; }
+  .col-8 {
+    float: left;
+    width: 100%; }
+  .col-9 {
+    float: left;
+    width: 100%; }
+  .col-10 {
+    float: left;
+    width: 100%; }
+  .col-11 {
+    float: left;
+    width: 100%; }
+  .col-12 {
+    float: left;
+    width: 100%; } }

@@ -1,5 +1,5 @@
 {
-  "name": "web-lib",
+  "name": "web-style",
   "version": "0.0.1",
   "description": "web style components",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cycgit/web-lib.git"
+    "url": "git+https://github.com/cycgit/web-style.git"
   },
   "keywords": [
     "web",
@@ -21,9 +21,9 @@
   "author": "CYC <342930982@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cycgit/web-lib/issues"
+    "url": "https://github.com/cycgit/web-style/issues"
   },
-  "homepage": "https://github.com/cycgit/web-lib#readme",
+  "homepage": "https://github.com/cycgit/web-style#readme",
   "dependencies": {
     "vue": "^1.0.24"
   },

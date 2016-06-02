@@ -1,9 +1,10 @@
 var gulp = require('gulp')
 var sass = require('gulp-sass')
 var clean = require('gulp-clean-css')
-var concat = require('gulp-concat');
+var concat = require('gulp-concat')
 
-var SASS_PATH = 'src/style/*.scss'
+var SASS_PATH = 'src/sass/*.scss'
+var FONTS_PATH = 'src/fonts/*'
 
 
 gulp.task('sass', function(){
@@ -21,6 +22,12 @@ gulp.task('publish', function () {
     gulp.src(SASS_PATH)
         .pipe(sass())
         .pipe(clean())
-        .pipe(concat('style.css'))
-        .pipe(gulp.dest('build/css'));
+        .pipe(concat('web-lib.css'))
+        .pipe(gulp.dest('dist/css'))
+
+
+    gulp.src(FONTS_PATH)
+        .pipe(gulp.dest('dist/fonts'))
+
+
 })

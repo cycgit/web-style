@@ -1,12 +1,12 @@
 {
   "name": "web-style",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "web style components",
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "commit": "sh commit.sh",
-    "publish": "gulp publish"
+    "push": "sh commit.sh",
+    "pack": "gulp pack"
   },
   "repository": {
     "type": "git",

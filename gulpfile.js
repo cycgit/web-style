@@ -18,11 +18,11 @@ gulp.task('default', function () {
     gulp.watch(SASS_PATH, ['sass'])
 })
 
-gulp.task('publish', function () {
+gulp.task('pack', function () {
     gulp.src(SASS_PATH)
         .pipe(sass())
         .pipe(clean())
-        .pipe(concat('web-lib.css'))
+        .pipe(concat('web-style.css'))
         .pipe(gulp.dest('dist/css'))
 
 

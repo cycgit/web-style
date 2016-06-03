@@ -18,16 +18,21 @@ gulp.task('default', function () {
     gulp.watch(SASS_PATH, ['sass'])
 })
 
+
 gulp.task('pack', function () {
+    gulp.watch(SASS_PATH, function(){
+
     gulp.src(SASS_PATH)
-        .pipe(sass())
-        .pipe(clean())
-        .pipe(concat('web-style.css'))
-        .pipe(gulp.dest('dist/css'))
+      .pipe(sass())
+      .pipe(clean())
+      .pipe(concat('web-style.css'))
+      .pipe(gulp.dest('/Users/cycok/aidaojia/tms-server/static/css'))
+      // .pipe(gulp.dest('dist/css'))
+    })
+
 
 
     gulp.src(FONTS_PATH)
         .pipe(gulp.dest('dist/fonts'))
-
 
 })

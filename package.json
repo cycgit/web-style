@@ -1,6 +1,6 @@
 {
   "name": "web-style",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "web style components",
   "main": "index.js",
   "scripts": {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .form {
   border: 1px solid #ddd;
   margin: 100px auto;
@@ -8,9 +9,11 @@
 .form .row {
   margin-bottom: 24px; }
 
-input {
+input textarea {
   background: #fff none;
-  outline: none; }
+  outline: none;
+  -webkit-appearance: none;
+  /*去除input默认样式*/ }
 
 .input {
   padding: 4px 7px;
@@ -23,8 +26,8 @@ input {
   border: 1px solid #d9d9d9;
   border-radius: 6px;
   box-sizing: border-box;
-  -webkit-transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
   .input:hover {
     border-color: #57c5f7; }
   .input:focus {

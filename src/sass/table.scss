@@ -48,6 +48,9 @@ caption {
   thead tr {
     white-space: nowrap;
   }
+  thead th {
+    min-width: 75px;
+  }
   overflow-x: scroll;
   overflow-y: hidden;
 }
@@ -88,6 +91,7 @@ caption {
     color: #fff;
     a {
       color: #fff;
+      cursor: default;
     }
 
   }

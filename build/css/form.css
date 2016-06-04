@@ -1,15 +1,11 @@
 @charset "UTF-8";
-.form {
-  border: 1px solid #ddd;
-  margin: 100px auto;
-  border-radius: 4px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-  width: 800px; }
-
 .form .row {
   margin-bottom: 24px; }
 
-input textarea {
+.search-8 > div {
+  padding: 8px; }
+
+input, textarea {
   background: #fff none;
   outline: none;
   -webkit-appearance: none;
@@ -46,7 +42,9 @@ input textarea {
   text-align: right;
   padding-right: 8px;
   height: 28px;
-  line-height: 28px; }
+  line-height: 28px;
+  float: left;
+  box-sizing: border-box; }
 
 @media only screen and (max-width: 640px) {
   .label {
@@ -58,7 +56,7 @@ input textarea {
   padding-right: 8px; }
 
 .form .input {
-  width: 140px;
+  width: 100%;
   margin-right: 8px; }
 
 .form .input-s {

@@ -33,6 +33,8 @@ caption {
   overflow-y: hidden; }
   .table-responsive thead tr {
     white-space: nowrap; }
+  .table-responsive thead th {
+    min-width: 75px; }
 
 .pagination {
   float: right; }
@@ -61,7 +63,8 @@ caption {
     background-color: #2db7f5;
     color: #fff; }
     .pagination .active a {
-      color: #fff; }
+      color: #fff;
+      cursor: default; }
   .pagination .jump {
     border: none; }
     .pagination .jump:before {

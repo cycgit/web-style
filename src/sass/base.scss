@@ -128,3 +128,17 @@ $allwidth: 100%;
       }
   }
 }
+
+.box-920{
+  width: 920px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 640px) {
+  .box-920{
+    width: 100%;
+    margin: 0
+  }
+}

@@ -26,7 +26,8 @@
   flex-direction: column; }
   .main .content {
     flex-grow: 1;
-    overflow: scroll; }
+    overflow: scroll;
+    padding: 0 10px; }
 
 .menu-line {
   display: flex;
@@ -58,7 +59,7 @@
     .header li a {
       color: #61b98e; }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .menu {
     display: none; }
   .main {

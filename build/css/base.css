@@ -43,8 +43,7 @@ a {
   position: relative;
   width: 100%;
   height: auto;
-  display: block;
-  margin: 15px auto; }
+  display: block; }
   .row:after {
     content: " ";
     display: block;
@@ -173,37 +172,59 @@ a {
 @media only screen and (max-width: 640px) {
   .col-1 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-2 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-3 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-4 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-5 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-6 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-7 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-8 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-9 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-10 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-11 {
     float: left;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box; }
   .col-12 {
     float: left;
-    width: 100%; } }
+    width: 100%;
+    box-sizing: border-box; } }
+
+.box-920 {
+  width: 920px;
+  box-sizing: border-box;
+  margin: 0 auto; }
+
+@media only screen and (max-width: 640px) {
+  .box-920 {
+    width: 100%;
+    margin: 0; } }

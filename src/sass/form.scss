@@ -1,16 +1,31 @@
-.form{
-}
 .form .row{
   margin-bottom: 24px;
 }
 .search-8>div{
   padding: 8px
-
+}
+.padding-08>div{
+     padding-right:8px
 }
 input,textarea{
   background: #fff none;
   outline: none;
   -webkit-appearance:none; /*去除input默认样式*/
+}
+.form textarea{
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    cursor: text;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    background-color: #fff;
+    background-image: none;
+    width: 100%;
+    height: 100px;
 }
 .input{
   padding: 4px 7px;
@@ -23,7 +38,6 @@ input,textarea{
   border: 1px solid #d9d9d9;
   border-radius: 6px;
   box-sizing: border-box;
-  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 
   &:hover{
@@ -68,7 +82,6 @@ input,textarea{
 
 .form .input{
   width: 100%;
-  margin-right: 8px;
 }
 
 .form .input-s{

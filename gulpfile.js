@@ -22,14 +22,12 @@ gulp.task('default', function () {
 
 gulp.task('pack', function () {
     gulp.watch(SASS_PATH, function(){
-
     gulp.src(SASS_PATH)
       .pipe(sass())
-      .pipe(autoprefixer(browserslist(' > 5%')))
       .pipe(clean())
       .pipe(concat('web-style.css'))
-    //   .pipe(gulp.dest('/Users/cycok/aidaojia/tms-server/static/css'))
-      .pipe(gulp.dest('dist/css'))
+      .pipe(gulp.dest('/Users/cycok/node/tms-server/static/css'))
+    //   .pipe(gulp.dest('dist/css'))
     })
 
 

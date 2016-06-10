@@ -27,6 +27,7 @@ input,textarea{
     width: 100%;
     height: 100px;
 }
+
 .input{
   padding: 4px 7px;
   width: 100%;
@@ -61,7 +62,6 @@ input,textarea{
 
 .label{
   text-align: right;
-  padding-right: 8px;
   height: 28px;
   line-height: 28px;
   float: left;
@@ -84,24 +84,11 @@ input,textarea{
   width: 100%;
 }
 
-.form .input-s{
-  width: 70px;
-}
-
-.form .input-l{
-  flex: 1;
-}
-
-
-.form .line{
-  display: flex;
-  margin-bottom: 24px;
-
-}
 .split{
   margin-right: 8px;
   line-height: 28px;
   height:28px;
+  float: left;
 }
 
 .select{
@@ -112,4 +99,5 @@ input,textarea{
   outline: 0;
   height: 28px;
   line-height: 28px;
+  width: 100%;
 }

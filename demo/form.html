@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>测试表单</title>
-    <link rel="stylesheet" href="../build/css/base.css">
-    <link rel="stylesheet" href="../build/css/form.css">
+    <link rel="stylesheet" href="../dist/css/web-style.css">
     <style>
 
         h1{
@@ -15,66 +14,69 @@
     </style>
 </head>
 <body>
-    <div class="form">
-        <h1 style="text-align: center">这是一个表单</h1>
-        <div class="line">
-            <div class="label">标题:</div>
+    <div class="form box-920">
+        <h1 class="">这是一个表单</h1>
+        <div class="row">
+            <div class="col-2 label">标题:</div>
             <div class="text">这是壹个很长的标题</div>
         </div>
 
 
-        <div class="line">
-            <div class="label">最长的长度:</div>
-            <div class="input input-l">
-                <input type="text" placeholder="11位电话号码">
+        <div class="row">
+            <div class="label col-2">最长的长度:</div>
+            <div class="col-2">
+                <input type="text" placeholder="11位电话号码" class="input">
             </div>
         </div>
 
-        <div class="line">
-            <div class="label">短长度:</div>
-            <div class="input input-s">
-                <input type="text" placeholder="数字" value="1234">
-            </div>
-        </div>
-
-
-        <div class="line">
-            <div class="label require">默认长度:</div>
-            <div class="input">
-                <input type="text" placeholder="11位电话号码" value="cycok">
+        <div class="row">
+            <div class="col-2 label">短长度:</div>
+            <div class="col-2">
+                <input type="text" placeholder="数字" value="1234" class="input">
             </div>
         </div>
 
 
-
-
-
-        <div class="line">
-            <div class="label">第二天控制发货的:</div>
-            <div class="input">
-                <input type="text" placeholder="18位身份证">
+        <div class="row">
+            <div class="label require col-2">默认长度:</div>
+            <div class="col-2">
+                <input type="text" placeholder="11位电话号码" value="cycok" class="input">
             </div>
-            <div class="input">
-                <input type="text" placeholder="18位身份证">
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="label col-2">第二天控制发货的:</div>
+            <div class="col-2">
+                <input type="text" placeholder="18位身份证" class="input">
+            </div>
+            <div class="col-2">
+                <input type="text" placeholder="18位身份证" class="input">
             </div>
             <div class="split">-</div>
-            <div class="input">
-                <input type="text" placeholder="18位身份证">
+            <div class="col-2">
+                <input type="text" placeholder="18位身份证" class="input">
             </div>
-            <div class="input">
-                <input type="text" placeholder="18位身份证">
+            <div class="col-2">
+                <input type="text" placeholder="18位身份证" class="input">
             </div>
         </div>
         
         
-        <div class="line">
-            <div class="label">选择学校:</div>
+        <div class="row">
+            <div class="label col-2">选择学校:</div>
+            <div class="col-2">
             <select class="select">
                 <option value="">宁波理工学院</option>
                 <option value="">杭州电子科技大学</option>
-            </select>
-            <div class="label2">选择分院:</div>
-            <div class="input"><input type="text"></div>
+            </select>  
+            </div>
+            
+            <div class="label">填写:</div>
+            <div class="col-2"><input type="text" class="input"></div>
         </div>
     </div>
 

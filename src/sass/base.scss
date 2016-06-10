@@ -82,10 +82,11 @@ $allwidth: 100%;
 @for $i from 1 through 12{
     .col-#{$i} {
         float: left;
+        padding-right: 8px;
         width: #{$i * $allwidth/12}
     }
     .col-offset-#{$i}{
-       float: left;
+        float: left;
         margin-left: #{$i * $allwidth/12}
     }
 }
@@ -123,6 +124,7 @@ $allwidth: 100%;
       .col-#{$i} {
           float: left;
           width: 100%;
+          padding-right: 0;
           box-sizing: border-box;
       }
   }

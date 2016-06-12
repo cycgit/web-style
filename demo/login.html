@@ -34,15 +34,9 @@
       .form{
         width: 400px;
       }
-      .form .label{
-        width: 100px;
-      }
       .small{
         text-align: center;
         margin-bottom: 24px;
-      }
-      .last{
-        margin-bottom: 40px
       }
       .label{
         height: 36px;
@@ -65,7 +59,7 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="login-box">
+        <div class="login-box form">
             <h1>爱到家TMS系统</h1>
 
             <div class="small">H5 创建发布平台</div>
@@ -80,8 +74,12 @@
                  <div class="col-8"><input type="password" placeholder="6位以上" value="1234" class="input"></div>
             </div>
 
-            <div class="row text-center last">
-              <div class="col-8 center" ><button class="btn btn-block btn-primary btn-lg"><i class="loading"></i></button></div>
+            <div class="row last">
+             <div class="col-8 col-offset-2">
+               <button class="btn btn-block btn-primary btn-lg"><i class="loading" style="display:none"></i> 登录</button>
+               
+             </div>
+
             </div>
 
         </div>

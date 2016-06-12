@@ -15,35 +15,63 @@
 </head>
 <body>
     <div class="form box-920">
-        <h1 class="">这是一个表单</h1>
+        <h1 class="text-center">表单</h1>
         <div class="row">
             <div class="col-2 label">标题:</div>
-            <div class="text">这是壹个很长的标题</div>
+            <div class="text">显示表单类型</div>
         </div>
 
 
         <div class="row">
-            <div class="label col-2">最长的长度:</div>
+            <div class="label col-2">账号:</div>
             <div class="col-2">
-                <input type="text" placeholder="11位电话号码" class="input">
+                <input type="text" placeholder="普通文本框" class="input">
             </div>
         </div>
 
         <div class="row">
-            <div class="col-2 label">短长度:</div>
-            <div class="col-2">
-                <input type="text" placeholder="数字" value="1234" class="input">
+            <div class="col-2 require label">店铺地址:</div>
+            <div class="col-3">
+                <input type="text" class="input">
             </div>
         </div>
 
 
         <div class="row">
-            <div class="label require col-2">默认长度:</div>
-            <div class="col-2">
-                <input type="text" placeholder="11位电话号码" value="cycok" class="input">
+            <div class="label require col-2">是否营业:</div>
+            <div class="col-4">
+              <label class="checkbox">
+                  <input type="checkbox">
+                  <span>配置A</span>
+              </label>
+              <label class="checkbox">
+                  <input type="checkbox">
+                  <span>配置B</span>
+              </label>
+              
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <span>配置C</span>
+              </label>
             </div>
         </div>
-
+        
+        <div class="row">
+            <div class="label require col-2">Radio单选框:</div>
+            <div class="col-2 radio">
+                <label>
+                    <input type="radio" name="sex">
+                    <span>男</span>
+                </label>
+                
+               <label>
+                    <input type="radio" name="sex">
+                    <span>女</span>
+                </label>
+                
+            </div>
+        </div>
+        
 
 
 

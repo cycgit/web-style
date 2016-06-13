@@ -2,34 +2,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>模态框</title>
     <link rel="stylesheet" href="../dist/css/web-style.css">
+    <style>
+        .show{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .wrap{
+            width: 100px;
+            height: 100px
+        }
+    </style>
 </head>
 <body>
 
-    <div class="model-mask" style="display: none">
-        <div class="model-confirm">
-            <h2 class="confirm-header">
-                <i class="iconfont icon-questioncircle"></i> 你是否确定?
-            </h2>
-            <div class="confirm-content">
-                删除这些数据不可恢复...
-            </div>
-            <div class="confirm-btns">
-                <button class="btn">取 消</button>
-                <button class="btn btn-primary">确 定</button>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="model-mask" style="display: none">
-        <div class="model-box">
-            <div class="model-header">
+<!--
+    <div class="modal-mask" style="display: none">
+        <div class="modal-box">
+            <div class="modal-header">
                 <h3>编辑商品</h3>
                 <i class="iconfont icon-cross"></i>
             </div>
-            <div class="model-body">
+            <div class="modal-body">
                 <div class="form">
                     <div class="row">
                         <div class="col-2 label col-offset-2">账号:</div>
@@ -45,26 +45,28 @@
                     </div>
                 </div>
             </div>
-            <div class="model-footer">
+            <div class="modal-footer">
                 <button class="btn">取 消</button>
                 <button class="btn btn-primary">确 定</button>
             </div>
         </div>
     </div>
+-->
 
 
-    <div class="box-920" id="app" style="margin-top: 100px">
-        <div class="col-2">
-            <button class="btn btn-danger" @click="click">删 除</button>
-        </div>
-        <div class="col-4">
-            {{ msg }}
-        </div>
+<div class="show" id="app">
+    <div class="wrap">
+        <button class="btn btn-danger" @click="click">删 除</button>
+        <p>{{ msg }}</p>
     </div>
-    <script src="../build/lib/vue.js"></script>
-    <script src="../src/js/confirm.js"></script>
+</div>
+<script src="../build/lib/vue.js"></script>
+<script src="../src/js/confirm.js"></script>
 
-    <script>
+<script>
+
+    //$confirm是全局的变量
+
     var app = new Vue({
         el: '#app',
         data:{
@@ -74,13 +76,13 @@
             click(){
                 var t = this
                 $confirm.alert({title: '你确定删除吗?', content: '删除不可以恢复...', onOk: function () {
-                        t.msg = '你刚点了确定'
+                    t.msg = '你刚点了确定'
                 }, onCancel: function () {
                     t.msg = '你刚点了取消'
                 }})
             }
         }
     })
-    </script>
+</script>
 </body>
 </html>

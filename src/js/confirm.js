@@ -1,6 +1,6 @@
 (function (Vue) {
-  var template = `<div class="model-mask" v-show="show">
-        <div class="model-confirm">
+  var template = `<div class="modal-mask" v-show="show"  transition="modal">
+        <div class="modal-confirm">
             <h2 class="confirm-header">
                 <i class="iconfont icon-questioncircle"></i> {{ title }}
             </h2>
@@ -41,8 +41,8 @@
 
         this.onCancel = false
         this.onOk = false
-        this.title = ''
-        this.content = ''
+
+        document.body.style.overflow = ''
       },
       alert(setting){
         this.title = setting.title ||  '标题'
@@ -50,6 +50,9 @@
         this.onOk = setting.onOk || false
         this.onCancel = setting.onCancel || false
         this.show = true
+        document.body.style.overflow = 'hidden'
+
+
       }
     }
   })

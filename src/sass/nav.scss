@@ -8,10 +8,11 @@
   box-sizing: border-box;
 
   ul{
-    background: darken(#FAFAFA, 5%);
+    //background: darken(#FAFAFA, 5%);
+    background: #FAFAFA;
   }
   li{
-    padding: 7px 0 7px 52px;
+    padding: 7px 0 7px 46px;
     :hover{
       color: #61b98e;
     }
@@ -25,7 +26,9 @@
     padding: 20px 0;
     color: #61b98e;
   }
-
+  .active a{
+    color: #61b98e;
+  }
 
 }
 
@@ -46,17 +49,20 @@
   height: 20px;
   padding-top: 14px;
   padding-bottom: 6px;
+  cursor: pointer;
   span{
     flex: 1;
   }
   i:first-child{
     margin-left: 10px;
-    padding: 3px 10px 0;
+    padding: 3px 12px 0;
     font-size: 12px;
   }
   i:last-child{
     margin-right: 20px;
     font-size: 12px;
+    font-weight: bold;
+    transform: scale(0.8);
   }
 }
 .header{

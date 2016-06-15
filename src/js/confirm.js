@@ -1,6 +1,13 @@
 (function (Vue) {
-  var template = `<div class="modal-mask" v-show="show"  transition="modal">
-        <div class="modal-confirm">
+  /*
+  *
+  *
+  *
+  *
+  * */
+
+    var template = `<div class="modal-mask" v-show="show"  transition="modal">
+          <div class="modal-confirm">
             <h2 class="confirm-header">
                 <i class="iconfont icon-questioncircle"></i> {{ title }}
             </h2>

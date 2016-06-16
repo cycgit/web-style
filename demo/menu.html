@@ -2,43 +2,95 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>菜单</title>
     <link rel="stylesheet" href="../dist/css/web-style.css">
 </head>
-<body>
-<div class="menu">
+<body id="app">
+<div class="menu" id="app">
     <div class="menu-top">
         <h2>TMS系统</h2>
     </div>
+    <v-menu :source="source"></v-menu>
+</div>
 
-    <div class="list">
-        <div class="menu-line">
-            <i class="iconfont icon-tago"></i><span>库存</span><i class="iconfont">&#xe600;</i>
-        </div>
-
-        <ul>
-            <li><a href="/">SKU查询</a></li>
-            <li><a href="/">库存预警</a></li>
-            <li><a href="/">安全损耗比</a></li>
-        </ul>
-
-    </div>
-
-
-    <div class="list">
-        <div class="menu-line">
-            <i class="iconfont icon-solution"></i><span>人员管理</span><i class="iconfont icon-right"></i>
-        </div>
-        <ul>
-            <li class="active"><a href="/">添加人员</a></li>
-            <li><a href="/">修改权限</a></li>
-            <li><a href="/">人员列表</a></li>
-        </ul>
-
+<div class="main">
+    <div class="box-920" style="margin-top: 100px">
+        <h3 class="text-center">菜单数据</h3>
+        <pre>{{ source| json 4 }}</pre>
     </div>
 </div>
 
+<script src="../build/lib/vue.js"></script>
+<script src="../src/js/menu.js"></script>
+
+<script>
+    var data = [
+        {
+            "name": "库存",
+            "icon": "tago",
+            "routes": [
+                {
+                    "name": "SKU查询",
+                    "url": "/web-style/demo/menu.html?_ijt=vq6n9e8qn7jjr7uh459derelse"
+                },
+                {
+                    "name": "库存预警",
+                    "url": "/p2"
+                },
+                {
+                    "name": "安全损耗比",
+                    "url": "/p3"
+                }
+            ],
+            "open": true
+        },
+        {
+            "name": "人员管理",
+            "icon": "solution",
+            "routes": [
+                {
+                    "name": "修改权限",
+                    "url": "/p4"
+                },
+                {
+                    "name": "人员列表",
+                    "url": "/p5"
+                }
+            ],
+            "open": false
+        },
+        {
+            "name": "全英雄联盟最骚的骚猪",
+            "icon": "enviromento",
+            "routes": [
+                {
+                    "name": "小轩在不在",
+                    "url": "/p7"
+                },
+                {
+                    "name": "我是娇妹",
+                    "url": "/p6"
+                }
+            ],
+            "open": false
+        }
+    ]
+
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            source: data
+        },
+        components: {
+            'v-menu': menu
+        }
+    })
+
+
+</script>
 
 
 </body>

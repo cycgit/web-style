@@ -8,8 +8,9 @@
   box-sizing: border-box;
 
   ul{
-    //background: darken(#FAFAFA, 5%);
     background: #FAFAFA;
+    transition: height .3s;
+    overflow: hidden;
   }
   li{
     padding: 7px 0 7px 46px;
@@ -29,7 +30,6 @@
   .active a{
     color: #61b98e;
   }
-
 }
 
 .main{
@@ -45,26 +45,50 @@
 }
 
 .menu-line{
-  display: flex;
   height: 20px;
   padding-top: 14px;
   padding-bottom: 6px;
   cursor: pointer;
-  span{
-    flex: 1;
+
+
+  .menu-name{
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
   }
-  i:first-child{
+
+   i{
     margin-left: 10px;
     padding: 3px 12px 0;
     font-size: 12px;
+    float: left;
+    min-width: 12px;
   }
-  i:last-child{
+
+
+  b{
     margin-right: 20px;
     font-size: 12px;
     font-weight: bold;
     transform: scale(0.8);
+    transition: transform .3s;
+    float: right;
   }
 }
+
+.active-line{
+  b{
+    margin-right: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    transform: scale(0.8) rotate(90deg);
+  }
+}
+
+
+
 .header{
   height: 64px;
   box-sizing: border-box;

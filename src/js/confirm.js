@@ -1,4 +1,4 @@
-(function (Vue) {
+(function (Vue, window) {
   /*
   *
   *
@@ -66,4 +66,4 @@
 
   window.$confirm = $confirm
 
-})(Vue)
+})(Vue, window)

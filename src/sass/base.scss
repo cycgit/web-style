@@ -85,11 +85,14 @@ $allwidth: 100%;
     .col-#{$i} {
         float: left;
         padding-right: 8px;
-        width: #{$i * $allwidth/12}
+        width: #{$i * $allwidth/12};
+        box-sizing: border-box;
     }
     .col-offset-#{$i}{
         float: left;
-        margin-left: #{$i * $allwidth/12}
+        margin-left: #{$i * $allwidth/12};
+        box-sizing: border-box;
+
     }
 }
 

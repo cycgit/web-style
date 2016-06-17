@@ -51,8 +51,12 @@ caption {
   thead th {
     min-width: 75px;
   }
-  overflow-x: scroll;
-  overflow-y: hidden;
+  tbody td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  overflow: scroll;
 }
 
 .pagination {

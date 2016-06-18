@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Popover 气泡卡片</title>
+  <link rel="stylesheet" href="../dist/css/web-style.css">
+  <style media="screen">
+    .btn{
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button class="btn btn-primary" @mouseover="popShow | debounce 500" @mouseout="popHide">弹出气泡卡片</button>
+    <v-popover :show="show"></v-popover>
+  </div>
+
+  <script src="../build/lib/vue.js"></script>
+  <script src="../src/js/popover.js"></script>
+  <script type="text/javascript">
+    var btn = new Vue({
+      el: '#app',
+      data: {
+        show: false
+      },
+      methods: {
+        popShow: function () {
+          this.show = true
+        },
+        popHide: function () {
+          this.show = false
+        }
+      },
+      components: {
+        'v-popover': popover
+      }
+    })
+  </script>
+</body>
+</html>

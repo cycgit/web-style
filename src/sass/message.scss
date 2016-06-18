@@ -211,3 +211,9 @@
   }
 }
 
+.popover-enter, .popover-leave {
+  opacity: 0;
+}
+.popover-transition{
+  transition: all .3s ease;
+}

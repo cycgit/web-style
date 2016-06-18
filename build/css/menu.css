@@ -7,9 +7,11 @@
   border-right: 1px solid #ddd;
   box-sizing: border-box; }
   .menu ul {
-    background: #ededed; }
+    background: #FAFAFA;
+    transition: height .3s;
+    overflow: hidden; }
   .menu li {
-    padding: 7px 0 7px 52px; }
+    padding: 7px 0 7px 46px; }
     .menu li :hover {
       color: #61b98e; }
   .menu a {
@@ -17,6 +19,8 @@
   .menu .menu-top {
     text-align: center;
     padding: 20px 0;
+    color: #61b98e; }
+  .menu .active a {
     color: #61b98e; }
 
 .main {
@@ -30,19 +34,35 @@
     padding: 0 10px; }
 
 .menu-line {
-  display: flex;
   height: 20px;
   padding-top: 14px;
-  padding-bottom: 6px; }
-  .menu-line span {
-    flex: 1; }
-  .menu-line i:first-child {
+  padding-bottom: 6px;
+  cursor: pointer; }
+  .menu-line .menu-name {
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis; }
+  .menu-line i {
     margin-left: 10px;
-    padding: 3px 10px 0;
-    font-size: 12px; }
-  .menu-line i:last-child {
+    padding: 3px 12px 0;
+    font-size: 12px;
+    float: left;
+    min-width: 12px; }
+  .menu-line b {
     margin-right: 20px;
-    font-size: 12px; }
+    font-size: 12px;
+    font-weight: bold;
+    transform: scale(0.8);
+    transition: transform .3s;
+    float: right; }
+
+.active-line b {
+  margin-right: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  transform: scale(0.8) rotate(90deg); }
 
 .header {
   height: 64px;

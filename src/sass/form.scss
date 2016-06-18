@@ -126,3 +126,29 @@ input,textarea{
         height: 14px
     }
 }
+
+.drop{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  .drop-ul{
+    outline: none;
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px hsla(0,0%,39%,.2);
+    background-clip: padding-box;
+    border: 1px solid #d9d9d9;
+    li{
+      padding: 7px 15px;
+      transition: background .3s ease;
+      &:hover{
+        background-color: #eaf8fe;
+      }
+    }
+  }
+}

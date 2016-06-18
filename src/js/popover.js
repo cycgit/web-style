@@ -1,6 +1,6 @@
 ;(function (Vue, window) {
   var template = `
-  <div class="popover-wrap" v-show="show">
+  <div class="popover-wrap" v-show="show" transition="popover">
     <div class="popover-box">
       <div class="popover-title">{{title}}</div>
       <div class="popover-content">{{content}}</div>

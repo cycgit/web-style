@@ -4,6 +4,7 @@
     <div class="popover-box">
       <div class="popover-title">{{title}}</div>
       <div class="popover-content">{{content}}</div>
+       <div class="popover-arrow popover-arrow-bottom"></div>
     </div>
   </div>`
 

@@ -194,7 +194,7 @@
                     <!--</div>-->
                 <!--</div>-->
 
-                <v-time></v-time>
+                <v-time :val.sync="time"></v-time>
 
             </div>
 
@@ -341,7 +341,7 @@
     var app = new Vue({
         el: '#app',
         data:{
-
+            time: '8:30:20'
         },
         methods:{
 

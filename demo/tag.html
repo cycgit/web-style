@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>输入框Tag标签</title>
+  <link rel="stylesheet" href="../dist/css/web-style.css">
+  <style media="screen">
+    #app{
+      width: 500px;
+      height: 75px;
+    }
+  </style>
+</head>
+<body>
+    <div id="app">
+
+      <v-tag :source.sync="source"></v-tag>
+
+    </div>
+    <script src="../build/lib/vue.js"></script>
+    <script src="../src/js/tag.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          source: ['英雄联盟', '骚猪', '对对对对对我是娇妹', '小轩在不在小轩在不在']
+        },
+        components: {
+          'v-tag': tag
+        }
+      })
+    </script>
+</body>
+</html>

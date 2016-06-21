@@ -213,14 +213,16 @@
 .tp-body{
   ul{
     float: left;
-    height: 145px;
+    height: 144px;
     width: 55px;
     overflow-y: scroll;
 
     .tp-active{
-      background: #d5f1fd;
+      background: #f7f7f7;
+      font-weight: 700;
+
       &:hover{
-        background: #d5f1fd;
+        background: #f7f7f7;
       }
     }
     li{
@@ -233,11 +235,17 @@
         background: #eaf8fe;
       }
     }
+    &:after{
+      content: '';
+      display: block;
+      height:120px;
+
+    }
   }
   .tp-line{
     float: left;
     width: 1px;
-    height: 145px;
+    height: 144px;
     background: #e9e9e9
   }
 }

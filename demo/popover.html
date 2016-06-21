@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -17,7 +17,6 @@
 </head>
 <body>
   <div id="app">
-    <div style="height: 100px; border:1px solid black" contenteditable="true"><span>hhhh</span><span>wwwwww</span></div>
 
     <button class="btn btn-primary" @mouseover="popShow($event) | debounce 500" @mouseout="popHide">弹出气泡卡片</button>
     <v-popover :show="show" :title="pop_title" :content="pop_content" :position="pop_position"></v-popover>

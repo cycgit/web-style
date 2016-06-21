@@ -7,14 +7,21 @@
   <link rel="stylesheet" href="../dist/css/web-style.css">
   <style media="screen">
     .btn{
-      margin: 5px;
+      margin: 50px;
+    }
+    span{
+      margin: 1px;
+      border: 1px solid red;
     }
   </style>
 </head>
 <body>
   <div id="app">
-    <button class="btn btn-primary" @mouseover="popShow | debounce 500" @mouseout="popHide">弹出气泡卡片</button>
-    <v-popover :show="show"></v-popover>
+    <div style="height: 100px; border:1px solid black" contenteditable="true"><span>hhhh</span><span>wwwwww</span></div>
+
+    <button class="btn btn-primary" @mouseover="popShow($event) | debounce 500" @mouseout="popHide">弹出气泡卡片</button>
+    <v-popover :show="show" :title="pop_title" :content="pop_content" :position="pop_position"></v-popover>
+
   </div>
 
   <script src="../build/lib/vue.js"></script>
@@ -23,10 +30,16 @@
     var btn = new Vue({
       el: '#app',
       data: {
-        show: false
+        show: false,
+        pop_title: '',
+        pop_content: '',
+        pop_position: {}
       },
       methods: {
-        popShow: function () {
+        popShow: function (e) {
+          this.pop_title = '我是标题'
+          this.pop_content = '我是一段提示内容'
+          this.pop_position = calc(e)
           this.show = true
         },
         popHide: function () {

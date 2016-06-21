@@ -193,8 +193,12 @@
                         <!--</ul>-->
                     <!--</div>-->
                 <!--</div>-->
-
-                <v-time :val.sync="time"></v-time>
+                <div style="height: 200px">
+                <v-time :val.sync="time" v-on:time-change="ss"></v-time>
+                </div>
+                <div class="row">
+                    <button class="btn btn-info" @click="clear" v-on:msg="ss">清 空</button>
+                </div>
 
             </div>
 
@@ -341,30 +345,23 @@
     var app = new Vue({
         el: '#app',
         data:{
-            time: '8:30:20'
+            time: '07:35:22'
         },
         methods:{
-
+            clear: function () {
+                this.time = '9:9:9'
+            },
+            ss: function (val) {
+                console.log(`接收到了${val}`)
+            }
         },
         components:{
             'v-time': timePicker
         }
     })
 
-    var m = document.getElementById('move')
 
-    function show() {
-        requestAnimationFrame(step)
-    }
-
-    function step() {
-        requestAnimationFrame(function () {
-            m.scrollTop += 4
-            if(m.scrollTop <20){
-                requestAnimationFrame(step)
-            }
-        })
-    }
+//    app.time = '9:20:35'
 
 
 </script>

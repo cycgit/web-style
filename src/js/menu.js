@@ -1,4 +1,4 @@
-(function (Vue, winodw) {
+;(function (Vue, winodw) {
 
 
   var template = `<div class="list" v-for="item in source">

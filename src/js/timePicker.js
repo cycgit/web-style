@@ -10,36 +10,42 @@
 
 
 
-  let template = ` <div class="tp">
-                    <div class="tp-header">
-                        <input placeholder="请选择时间" :value="out">
-                        <i class="iconfont icon-crosscircle"></i>
-                    </div>
-                    <div class="tp-body">
+  let template = `
+                    <div> 
                     
-                        <ul v-el:h>
-                            <li v-for="n in h" :class="{'tp-active': n == sh}" @click="click(n, 'h')">{{n}}</li>
-                        </ul>
-                        
-                        <div class="tp-line"></div>
-                        
-                        <ul v-el:m>
-                            <li v-for="n in m" :class="{'tp-active': n == sm}" @click="click(n, 'm')">{{n}}</li>
-                        </ul>
-                         
-                        <div class="tp-line"></div>
-                        
-                        <ul v-el:s>
-                           <li v-for="n in s" :class="{'tp-active': n == ss}" @click="click(n, 's')">{{n}}</li>
-                        </ul>
+                      <div class="tp-out"><input type="text" class="input" placeholder="请选择时间" @focus="show=true" :value="out"></div>
+                                   
+                      <div class="tp" v-show="show" v-el:tp>
+                        <div class="tp-header">
+                            <input placeholder="请选择时间" :value="out">
+                            <i class="iconfont icon-crosscircle" @click="show=false"></i>
+                        </div>
+                        <div class="tp-body">
+                            <ul v-el:h>
+                                <li v-for="n in h" :class="{'tp-active': n == sh}" @click="click(n, 'h')">{{n}}</li>
+                            </ul>
+                            <div class="tp-line"></div>
+                            <ul v-el:m>
+                                <li v-for="n in m" :class="{'tp-active': n == sm}" @click="click(n, 'm')">{{n}}</li>
+                            </ul>
+                            <div class="tp-line"></div>
+                            <ul v-el:s>
+                               <li v-for="n in s" :class="{'tp-active': n == ss}" @click="click(n, 's')">{{n}}</li>
+                            </ul>
+                        </div>
+                      </div>
+                    
                     </div>
-                </div>`
+                
+                `
 
   let timePicker = Vue.extend({
     template,
     props: {
       val: {
         coerce: function (val) {
+
+          if(!val) return ''
 
           if (val.indexOf(':') != -1) {
 
@@ -64,6 +70,7 @@
         sh: sp[0],
         sm: sp[1],
         ss: sp[2],
+        show: false,
         op: false
       }
     },
@@ -71,6 +78,20 @@
       this.$els.h.scrollTop = this.sh * 24
       this.$els.m.scrollTop = this.sm * 24
       this.$els.s.scrollTop = this.ss * 24
+
+
+      this.$els.tp.addEventListener('click', function (e) {
+        e.stopPropagation()
+        return false
+      })
+
+
+      document.body.addEventListener('click', function () {
+        this.show = false
+        // if(this.show){
+        //   this.show = false
+        // }
+      }.bind(this))
     },
     computed: {
       h(){

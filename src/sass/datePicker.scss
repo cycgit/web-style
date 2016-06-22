@@ -17,7 +17,7 @@
     cursor: pointer;
     color: #ccc;
     position: absolute;
-    right: 10px;
+    right: 5px;
     top: 10px;
     font-size: 12px;
     transition: color .3s ease ;
@@ -165,6 +165,32 @@
 }
 
 
+.tp-out{
+  position: relative;
+  width: 96px;
+  min-width: 80px;
+  i{
+    position: absolute;
+    right: 10px;
+    top: 6px;
+  }
+  .input{
+    font-size: 12px;
+  }
+
+  &:after{
+    content: "\e643";
+    font-family: iconfont!important;
+    font-size: 14px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 8px;
+  }
+}
 
 .tp{
   width: 168px;
@@ -175,7 +201,6 @@
   line-height: 1.5;
   background: #fff;
   position: absolute;
-  //top: 28px;
   top: 0px;
   z-index: 102;
 }

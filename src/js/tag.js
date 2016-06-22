@@ -4,7 +4,7 @@
     <div class="tag" :style="{backgroundColor: bgc[item.bgc_no]}" v-for="item in dis_source">
       <span class="content">{{item.text}}</span><span class="del" @click="del($index)">&times;</span>
     </div>
-    <input class="tag-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)">
+    <input class="tag-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)" @keyup.delete="del(source.length - 1)">
   </div>`
 
   var tag = Vue.extend({
@@ -43,8 +43,10 @@
         }
       },
       del(index){
-        this.source.splice(index, 1)
-        this.dis_source.splice(index, 1)
+        if(index >= 0){
+          this.source.splice(index, 1)
+          this.dis_source.splice(index, 1)
+        }
       }
     }
   })

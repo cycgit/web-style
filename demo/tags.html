@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Tags</title>
+  <link rel="stylesheet" href="../dist/css/web-style.css">
+  <style media="screen">
+  .readme, #app{
+    margin: 5px;
+  }
+  #app{
+    width: 500px;
+  }
+  </style>
+</head>
+<body>
+  <p class="readme">
+    用户输入内容后可以按 <code>enter</code> 键增加新标签，可以按 <code>delete</code> 键删除最后一个标签，也可以通过每个标签右边的叉叉删除指定标签。
+  </p>
+  <div id="app">
+
+    <v-tags :source.sync="source"></v-tags>
+
+  </div>
+  <script src="../build/lib/vue.js"></script>
+  <script src="../src/js/tags.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        source: ['英雄联盟', '骚猪', '对对对对对我是娇妹', '小轩在不在']
+      },
+      components: {
+        'v-tags': tags
+      }
+    })
+  </script>
+</body>
+</html>

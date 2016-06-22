@@ -2,9 +2,9 @@
   var template = `
   <div class="input tag-wrap">
     <div class="tag" :style="{backgroundColor: bgc[item.bgc_no]}" v-for="item in dis_source">
-      <span class="content">{{item.text}}</span><span class="del" @click="del($index)">&times;</span>
+      <span class="content">{{item.text}}</span><span class="del" @click="del($index, false)">&times;</span>
     </div>
-    <input class="tag-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)" @keyup.delete="del(source.length - 1)">
+    <input class="tag-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)" @keydown.delete="del(source.length - 1, true)">
   </div>`
 
   var tag = Vue.extend({
@@ -42,8 +42,13 @@
           this.text = ''
         }
       },
-      del(index){
-        if(index >= 0){
+      del(index, way){
+        if(way){
+          if(index >=0 && this.text == ''){
+            this.source.splice(index, 1)
+            this.dis_source.splice(index, 1)
+          }
+        }else {
           this.source.splice(index, 1)
           this.dis_source.splice(index, 1)
         }

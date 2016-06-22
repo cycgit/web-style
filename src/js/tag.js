@@ -43,8 +43,10 @@
         }
       },
       del(index){
-        this.source.splice(index, 1)
-        this.dis_source.splice(index, 1)
+        if(index >= 0){
+          this.source.splice(index, 1)
+          this.dis_source.splice(index, 1)
+        }
       }
     }
   })

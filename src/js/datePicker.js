@@ -124,7 +124,7 @@
                         </table>
 
                     </div>
-                    <div class="dp-footer"><a>今天</a>  <span class="btn btn-primary btn-sm">确 定</span></div>
+                    <div class="dp-footer"><a>今天</a>  <span class="btn btn-primary btn-sm" @click="show=false">确 定</span></div>
                 </div>
                 
                 
@@ -185,7 +185,7 @@
     },
     computed: {
       out(){
-        if (!this.sel) return ''
+        if (!this.val) return ''
 
 
         var d = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
@@ -201,7 +201,7 @@
 
       },
       outd(){
-        if (!this.sel) return ''
+        if (!this.val) return ''
 
 
         var d = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
@@ -284,7 +284,7 @@
 
 
         if (this.showtime) {
-          var n = this.short ? new Date(this.val * 1000) : new Date(this.val)
+          var n = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
           this.val = new Date(ar[0], ar[1] - 1, ar[2], n.getHours(), n.getMinutes(), n.getSeconds()).getTime()
         } else {
           this.val = new Date(ar[0], ar[1] - 1, ar[2]).getTime()

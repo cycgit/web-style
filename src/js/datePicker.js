@@ -190,7 +190,7 @@
 
         var d = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
 
-        var dy = (d.getFullYear()) + '-' + ('0' + d.getMonth()).slice(-2) + '-' + ('0' + d.getDate()).slice(-2)
+        var dy = (d.getFullYear()) + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2)
         var dm = ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2) + ':' + ('0' + d.getSeconds()).slice(-2)
         if (this.showtime) {
           return dy + ' ' + dm
@@ -206,7 +206,7 @@
 
         var d = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
 
-        var dy = (d.getFullYear()) + '-' + ('0' + d.getMonth()).slice(-2) + '-' + ('0' + d.getDate()).slice(-2)
+        var dy = (d.getFullYear()) + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2)
         return dy
       }
     },

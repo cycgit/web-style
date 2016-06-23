@@ -84,7 +84,7 @@
                         <i class="iconfont icon-calendar"></i>
                       </div>
                     
-                    <div class="dp" v-show="show">
+                    <div class="dp" v-show="show" v-el:dp2>
                     <div class="dp-header1">
                        <div class="dp-input-wrap" v-if="showtime">
                             <input class="input" placeholder="请选择日期" :value="outd">
@@ -212,11 +212,18 @@
     },
     ready(){
       var dp = this.$els.dp
-      var time = this.$els.time
-      dp.addEventListener('click', function (e) {
+      var dp2 = this.$els.dp2
+      var time = this.$refs.time
+      dp2.addEventListener('click', function (e) {
+        console.log(111)
         if (time) time.show = false
         e.stopPropagation()
       })
+
+      dp.addEventListener('click', function (e) {
+        e.stopPropagation()
+      })
+
       document.body.addEventListener('click', function () {
         this.show = false
       }.bind(this))
@@ -277,7 +284,6 @@
         //点击事件
 
         this.sel = data
-        this.show = false
         var ar = data.split('-')
         var m = ar[1]
         var y = ar[0]

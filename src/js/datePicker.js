@@ -78,19 +78,30 @@
 
 
   let template = ` 
-                    <div class="dp" v-el:dp>
-                    <div class="dp-header1" v-if="showtime">
-                       <div class="dp-input-wrap">
-                            <input class="input" placeholder="请选择日期" :value="out">
+                    <div v-el:dp>
+                      <div class="dp-out">
+                      <input type="text" class="input" placeholder="请选择时间" @focus="show=true" :value="out">
+                        <i class="iconfont icon-calendar"></i>
+                      </div>
+                    
+                    <div class="dp" v-show="show">
+                    <div class="dp-header1">
+                       <div class="dp-input-wrap" v-if="showtime">
+                            <input class="input" placeholder="请选择日期" :value="outd">
                         </div>
                         
-                          <div class="dp-input-wrap">
+                          <div class="dp-input-wrap" v-if="showtime">
                             <div class="input-wrap">
-                                <v-time :val="time" v-on:time-change="change"></v-time>
+                                <v-time :val="time" v-on:time-change="change" v-ref:time></v-time>
                             </div>
                           </div>
-                        <i class="iconfont icon-crosscircle"></i>
+                          
+                        <div class="dp-text" v-if="!showtime">{{out}}</div>  
+                        <i class="iconfont icon-crosscircle" @click="show=false"></i>
                     </div>
+                    
+                    
+                    
                     <div class="dp-header2"><a class="dp-h-1" @click="cy(-1)">«</a><a class="dp-h-2" @click="cm(-1)">‹</a>
                         <span class="dp-ym">{{y}}年 {{m}}月</span>
                         <a class="dp-h-3" @click="cm(1)">›</a><a class="dp-h-4" @click="cy(1)">»</a></div>
@@ -113,7 +124,10 @@
                         </table>
 
                     </div>
-                    <div class="dp-footer"><a>今天</a>  <span class="btn btn-primary btn-sm">确 定</span></div>
+                    <div class="dp-footer"><a>今天</a>  <span class="btn btn-primary btn-sm" @click="show=false">确 定</span></div>
+                </div>
+                
+                
                 </div>
 `
 
@@ -126,13 +140,13 @@
           return val
         }
       },
-      short:{
+      short: {
         coerce (val) {
           //支持10位
           return val ? true : false
         }
       },
-      showtime:{
+      showtime: {
         coerce (val) {
           //支持显示时间
           return val ? true : false
@@ -143,7 +157,7 @@
       var show = new Date()
       var time = ''
       if (this.val) {
-        let stamp = this.short ? this.val*1000 : this.val
+        let stamp = this.short ? this.val * 1000 : this.val
         show = new Date(parseInt(stamp))
         var sel = show.getFullYear() + '-' + (show.getMonth() + 1) + '-' + show.getDate()
         time = show.getHours() + ':' + show.getMinutes() + ':' + show.getSeconds()
@@ -165,19 +179,42 @@
         y,
         m,
         lineDate,
-        time
+        time,   //用于时间组件
+        show: false
       }
     },
-    computed:{
-       out(){
-         if(!this.sel) return ''
-         var sp = this.sel.split('-')
-         return (sp[0])+'-'+ ('0'+ sp[1]).slice(-2) + '-'+('0'+ sp[2]).slice(-2)
-       }
+    computed: {
+      out(){
+        if (!this.val) return ''
+
+
+        var d = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
+
+        var dy = (d.getFullYear()) + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2)
+        var dm = ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2) + ':' + ('0' + d.getSeconds()).slice(-2)
+        if (this.showtime) {
+          return dy + ' ' + dm
+        } else {
+          return dy
+        }
+
+
+      },
+      outd(){
+        if (!this.val) return ''
+
+
+        var d = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
+
+        var dy = (d.getFullYear()) + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2)
+        return dy
+      }
     },
     ready(){
       var dp = this.$els.dp
+      var time = this.$els.time
       dp.addEventListener('click', function (e) {
+        if (time) time.show = false
         e.stopPropagation()
       })
       document.body.addEventListener('click', function () {
@@ -216,20 +253,20 @@
       },
       change(time){
         var sp = time.split(':')
-        if(this.sel){
+        if (this.sel) {
           var sp2 = this.sel.split('-')
 
-        for(var i = 0; i<sp.length;i++){
-          sp[i] = parseInt(sp[i])
-          sp2[i] = parseInt(sp2[i])
-        }
-          this.val = new Date(sp2[0], sp2[1]-1, sp2[2], sp[0], sp[1], sp[2]).getTime()   //更新时间错
-
-
-          if(this.short){
-            this.val = this.val/1000
+          for (var i = 0; i < sp.length; i++) {
+            sp[i] = parseInt(sp[i])
+            sp2[i] = parseInt(sp2[i])
           }
-        }else{
+          this.val = new Date(sp2[0], sp2[1] - 1, sp2[2], sp[0], sp[1], sp[2]).getTime()   //更新时间错
+
+
+          if (this.short) {
+            this.val = this.val / 1000
+          }
+        } else {
 
         }
 
@@ -245,9 +282,17 @@
         var m = ar[1]
         var y = ar[0]
 
-        this.val = new Date(ar[0], ar[1] - 1, ar[2]).getTime()   //更新时间错
-        if(this.short){
-          this.val = this.val/1000
+
+        if (this.showtime) {
+          var n = this.short ? new Date(this.val * 1000) : new Date(parseInt(this.val))
+          this.val = new Date(ar[0], ar[1] - 1, ar[2], n.getHours(), n.getMinutes(), n.getSeconds()).getTime()
+        } else {
+          this.val = new Date(ar[0], ar[1] - 1, ar[2]).getTime()
+        }
+
+
+        if (this.short) {
+          this.val = this.val / 1000
         }
 
         if (m != this.m) {

@@ -13,7 +13,9 @@
   let template = `
                     <div> 
                     
-                      <div class="tp-out"><input type="text" class="input" placeholder="请选择时间" @focus="show=true" :value="out"></div>
+                      <div class="tp-out">
+                            <input type="text" class="input" placeholder="请选择时间" @focus="show=true" :value="out">
+                      </div>
                                    
                       <div class="tp" v-show="show" v-el:tp>
                         <div class="tp-header">

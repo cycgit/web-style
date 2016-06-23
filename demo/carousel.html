@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>Tags</title>
+  <title>vue轮播组件</title>
   <link rel="stylesheet" href="../dist/css/web-style.css">
   <style media="screen">
-  .readme, #app{
+  .readme{
     margin: 5px;
   }
-  #app{
+  .wrap{
     width: 500px;
-  }
-  @media (max-width: 800px) {
-    #app{
-      width: 95%;
-      margin: auto;
-    }
+    height: 200px;
+    margin: auto;
   }
   </style>
 </head>
@@ -24,21 +20,20 @@
   <p class="readme">
     用户输入内容后可以按 <code>enter</code> 键增加新标签，可以按 <code>delete</code> 键删除最后一个标签，也可以通过每个标签右边的叉叉删除指定标签。
   </p>
-  <div id="app">
 
-    <v-tags :source.sync="source"></v-tags>
-
+  <div class="wrap" id="app">
+    <v-carousel :source="source"></v-carousel>
   </div>
-  <script src="../build/lib/vue.js"></script>
-  <script src="../src/js/tags.js"></script>
-  <script>
+  <script src="../build/lib/vue.js" charset="utf-8"></script>
+  <script src="../src/js/carousel.js" charset="utf-8"></script>
+  <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
-        source: ['英雄联盟', '骚猪', '对对对对对我是娇妹', '小轩在不在']
+        source: ['http://pic71.nipic.com/file/20150709/10603465_153718936000_2.jpg', 'http://pic4.nipic.com/20091215/2396136_140959028451_2.jpg', 'http://pic24.nipic.com/20121003/10754047_140022530392_2.jpg']
       },
       components: {
-        'v-tags': tags
+        'v-carousel': carousel
       }
     })
   </script>

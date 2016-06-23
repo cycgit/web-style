@@ -1,13 +1,13 @@
 ;(function (Vue, window) {
   var template = `
-  <div class="input tag-wrap">
-    <div class="tag" :style="{backgroundColor: bgc[item.bgc_no]}" v-for="item in dis_source">
+  <div class="input tags-wrap">
+    <div class="tags" transition="tags" :style="{backgroundColor: bgc[item.bgc_no]}" v-for="item in dis_source">
       <span class="content">{{item.text}}</span><span class="del" @click="del($index, false)">&times;</span>
     </div>
-    <input class="tag-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)" @keydown.delete="del(source.length - 1, true)">
+    <input class="tags-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)" @keydown.delete="del(source.length - 1, true)">
   </div>`
 
-  var tag = Vue.extend({
+  var tags = Vue.extend({
     template,
     props: {
       source: {
@@ -56,5 +56,5 @@
     }
   })
 
-  window.tag = tag
+  window.tags = tags
 })(Vue, window)

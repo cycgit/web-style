@@ -153,8 +153,8 @@ input,textarea{
   }
 }
 
-//输入框tag
-.tag-wrap{
+//输入框tags
+.tags-wrap{
   width: 100%;
   height: 100%;
   outline: none;
@@ -166,7 +166,7 @@ input,textarea{
     }
 }
 
-.tag, .tag-input{
+.tags, .tags-input{
   position: relative;
   float: left;
   color: #fff;
@@ -188,11 +188,18 @@ input,textarea{
   }
 }
 
-.tag-input{
+.tags-input{
   font-size: 14px;
   padding: 0;
   background-color: inherit;
   border: none;
   color: inherit;
   width: 10em;
+}
+.tags-enter, .tags-leave{
+  transform: scale(0.9);
+  opacity: 0;
+}
+.tags-transition{
+  transition: all .3s ease;
 }

@@ -8,11 +8,9 @@
 .fade-leave {
   opacity: 0;
 }
-
 .slide-transition {
   transition: transform .3s ease, opacity .3s ease;
   transform: translate(0, 0);
-
 }
 .slide-enter{
   transform: translate(0, 5px);

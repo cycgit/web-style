@@ -1,0 +1,17 @@
+//轮播组件样式
+.v-carousel-wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.v-carousel-content{
+  height: 100%;
+  position: relative;
+}
+.v-carousel-one{
+  height: 100%;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

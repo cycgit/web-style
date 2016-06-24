@@ -11,13 +11,13 @@
 
 
   let template = `
-                    <div> 
-                    
+                    <div>
+
                       <div class="tp-out">
                             <input type="text" class="input" placeholder="请选择时间" @focus="show=true" :value="out">
                       </div>
-                                   
-                      <div class="tp" v-show="show" v-el:tp>
+
+                      <div class="tp" v-show="show" v-el:tp transition="slide">
                         <div class="tp-header">
                             <input placeholder="请选择时间" :value="out">
                             <i class="iconfont icon-crosscircle" @click="show=false"></i>
@@ -36,9 +36,9 @@
                             </ul>
                         </div>
                       </div>
-                    
+
                     </div>
-                
+
                 `
 
   let timePicker = Vue.extend({
@@ -115,7 +115,7 @@
     watch: {
       val(val){
         if(this.op){
-         
+
           this.$dispatch('time-change', this.val)
 
         }else{
@@ -178,7 +178,7 @@
         let val = ('0' + this.sh).slice(-2) + ':' + ('0' + this.sm).slice(-2) + ':' + ('0' + this.ss).slice(-2)
 
         this.val = val
-        
+
       },
       clear(){
         this.sh = -1
@@ -198,6 +198,3 @@
   window.components = window.components ? window.components : {}
   return window.components
 }())
-
-
-

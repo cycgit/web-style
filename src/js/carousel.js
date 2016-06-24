@@ -1,7 +1,7 @@
 ;(function (Vue, window) {
   var template = `
   <div class="v-carousel-wrap">
-    <div class="v-carousel-content" :style="{width: source.length + 1 + '00%', height: contentHeight, left: -activeIndex + '00%'}">
+    <div :class="['v-carousel-content']" :style="{width: source.length + 1 + '00%', height: contentHeight, left: -currentIndex + '00%'}" >
       <div class="v-carousel-one" :style="{backgroundImage: 'url(' + item + ')', width: 100 / ( source.length + 1 ) + '%' }" v-for="item in source"></div>
       <div class="v-carousel-one" :style="{backgroundImage: 'url(' + source[0] + ')', width: 100 / ( source.length + 1 ) + '%' }"></div>
     </div>
@@ -38,7 +38,8 @@
         this.autoPlay()
       }
       return {
-        activeIndex: 0,
+        targetIndex: 0,
+        currentIndex: 0,
         timer: ''
       }
     },
@@ -54,12 +55,22 @@
       autoPlay() {
         clearInterval(this.timer)
         this.timer = setInterval(function() {
+
+          // if(this.activeIndex >= this.source.length){
+          //   this.animate = false
+          //   this.activeIndex = 0
+          //   this.animate = true
+          // }
+          // console.log(this.activeIndex);
           this.activeIndex++
-          console.log(this.activeIndex);
-          if(this.activeIndex >= this.source.length){
-            this.activeIndex = 0
-          }
+          this.animate()
+
         }.bind(this), this.delayTime);
+      },
+      animate() {
+        function step() {
+          var
+        }
       }
     }
   })

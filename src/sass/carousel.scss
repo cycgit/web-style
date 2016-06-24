@@ -6,6 +6,8 @@
 }
 .v-carousel-content{
   position: relative;
+}
+.v-carousel-animation{
   transition: left .6s ease;
 }
 .v-carousel-one{
@@ -35,6 +37,6 @@
     }
   }
   .active{
-    color: #000;
+    color: #000 !important;
   }
 }

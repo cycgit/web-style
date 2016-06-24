@@ -22,7 +22,7 @@ gulp.task('default', ['sass','watch'])
 
 
 gulp.task('sass', function () {
-  gulp.src(SASS_PATH)
+  gulp.src('src/sass/index.scss')
     .pipe(sass())
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(clean())

@@ -15,8 +15,8 @@
   border:1px solid #d9d9d9;
   border-radius: 6px;
   position: absolute;
-  top: -30px;
-  left: 0;
+  top: -2px;
+  left: -2px;
   background: #fff;
   z-index:10;
   .dp-text{
@@ -209,7 +209,8 @@
   line-height: 1.5;
   background: #fff;
   position: absolute;
-  top: 0px;
+  top: -2px;
+  left: -2px;
   z-index: 102;
 }
 .tp-header{

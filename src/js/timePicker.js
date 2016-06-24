@@ -17,7 +17,7 @@
                             <input type="text" class="input" placeholder="请选择时间" @focus="show=true" :value="out">
                       </div>
                                    
-                      <div class="tp" v-show="show" v-el:tp>
+                      <div class="tp" v-show="show" v-el:tp transition="slide">
                         <div class="tp-header">
                             <input placeholder="请选择时间" :value="out">
                             <i class="iconfont icon-crosscircle" @click="show=false"></i>

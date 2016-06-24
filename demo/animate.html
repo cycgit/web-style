@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <link rel="stylesheet" href="../dist/css/web-style.css">
+    <style>
+        .box{
+            width: 100px;
+            height:100px;
+            background: black;
+            display: inline-block;
+        }
+
+        /*.move{*/
+            /*animation: show .5s;*/
+            /*opacity: 1;*/
+            /*animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);*/
+        /*}*/
+
+        .move-enter {
+            animation: show .5s ease;
+        }
+        .move-leave{
+            animation: show2 .5s ease;
+        }
+
+        .move-transition{
+            /*transition: all .3s ease;*/
+            /*animation: show .5s ease;*/
+        }
+
+        @keyframes show {
+            from {
+                transform: translate3d(0, -100%, 0);
+                visibility: visible;
+                opacity: 0;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity:1 ;
+            }
+        }
+
+        @keyframes show2 {
+            from {
+
+                transform: translate3d(0, 0, 0);
+                opacity:1 ;
+            }
+            to {
+                transform: translate3d(0, 100%, 0);
+                visibility: visible;
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box-920" style="margin-top: 50px">
+
+        <div class="row" id="app">
+            <div class="col-2 label"><button class="btn btn-info" @click="click">切换</button></div>
+            <div class="col-10">
+                <div class="box" v-show="show" transition="move"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../build/lib/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                show: false,
+            },
+            methods:{
+                click(){
+                    this.show = !this.show
+                }
+            }
+        })
+
+
+    </script>
+</body>
+</html>

@@ -2,39 +2,39 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>模态框</title>
     <link rel="stylesheet" href="../dist/css/web-style.css">
     <style>
-        .dp{
-            position: relative;
-        }
+
+
     </style>
 </head>
 <body>
-    <div class="box-920" style="margin-top: 50px" id="app">
-        <div class="row">
-            <div class="col-4">
-                <div class="col-4 label">选择日期:</div>
-                <div class="col-8">
-                    <v-date :val="date" :showtime="true"></v-date>
-                </div>
+<div class="box-920" style="margin-top: 50px" id="app">
+    <div class="row">
+        <div class="col-4">
+            <div class="col-4 label">选择日期:</div>
+            <div class="col-8">
+                <v-date :val="date" :showtime="true"></v-date>
+            </div>
+        </div>
+
+
+        <div class="col-4">
+
+            <div class="col-4 label">选择时间:</div>
+            <div class="col-8">
+                <v-time :val.sync="time" v-on:time-change="ss"></v-time>
             </div>
 
-
-            <div class="col-4">
-
-                <div class="col-4 label">选择时间:</div>
-                <div class="col-8">
-                    <v-time :val.sync="time" v-on:time-change="ss"></v-time>
-                </div>
-
-
-            </div>
 
         </div>
 
     </div>
+
+</div>
 
 <script src="../build/lib/vue.js"></script>
 <script src="../src/js/timePicker.js"></script>
@@ -47,16 +47,16 @@
 
     var app = new Vue({
         el: '#app',
-        data:{
+        data: {
             date: '1466653094167',
             time: ''
         },
-        methods:{
+        methods: {
             ss: function (val) {
                 console.log(`接收到了${val}`)
             }
         },
-        components:{
+        components: {
             'v-time': timePicker,
             'v-date': datePicker,
         }

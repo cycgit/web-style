@@ -84,7 +84,7 @@
                         <i class="iconfont icon-calendar"></i>
                       </div>
                     
-                    <div class="dp" v-show="show" v-el:dp2>
+                    <div class="dp" v-show="show" v-el:dp2 transition="slide">
                     <div class="dp-header1">
                        <div class="dp-input-wrap" v-if="showtime">
                             <input class="input" placeholder="请选择日期" :value="outd">

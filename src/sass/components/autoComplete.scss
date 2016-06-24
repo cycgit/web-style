@@ -1,0 +1,20 @@
+.v-auto {
+  outline: none;
+}
+
+.v-drop {
+  border: 1px solid #E4E6E7;
+  margin-right: 2px;
+  border-radius: 0 0 2px 2px;
+  background-color: #fff;
+  position: relative;
+  ul {
+  }
+  li {
+    padding: 4px 7px;
+    cursor: pointer;
+  }
+  .active {
+    background-color: #eee;
+  }
+}

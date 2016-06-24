@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自定义完成组件</title>
+    <link rel="stylesheet" href="../dist/css/web-style.css">
+    <style>
+    </style>
+</head>
+<body>
+<div class="box-920" style="margin-top: 100px" id="app">
+    <div class="row">
+        <div class="col-2">{{msg}}</div>
+        <div class="col-2 label">选择搜索:</div>
+        <div class="col-5">
+            <v-auto></v-auto>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <pre>
+            {{source | json 4}}
+            </pre>
+
+        </div>
+    </div>
+    <div class="row">
+        {{val}}
+    </div>
+
+
+</div>
+<script src="../dist/js/vue.js"></script>
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data:{
+
+        },
+        methods:{
+
+        }
+    })
+
+    function search(s) {
+        if(s == 11){
+           return [{title:'这是11', value:'1'},
+                {title:'我是娇妹', value:'2'},
+                {title:'英雄联盟', value:'3'},
+                {title:'PDD', value:'4'},
+                {title:'二胖手', value:'5'}]
+        }else{
+            return [{title:'这是其他', value:'1'},
+                {title:'自动完成组件', value:'2'},
+                {title:'呵呵呵呵', value:'3'},
+                {title:'嘻嘻嘻洗啦AA啦', value:'4'}]
+
+        }
+    }
+</script>
+</body>
+</html>

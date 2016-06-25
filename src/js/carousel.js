@@ -66,5 +66,8 @@
       }
     }
   })
-  window.carousel = carousel
-})(Vue, window)
+  components.carousel = carousel
+})(Vue, function () {
+  window.components = window.components ? window.components : {}
+  return window.components
+}())

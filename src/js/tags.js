@@ -40,11 +40,12 @@
     methods: {
       pasteText(e) {
         e.preventDefault()
+        console.log(trim());
         var text = (e.clipboardData || window.clipboardData).getData('text')
         this.addTag(text)
       },
-      addTag(text){
-        if(text != ''){
+      addTag(text){ 
+        if(text.trim() != ''){
           var count = this.source.length
           this.source.$set(count, text)
           this.disSource.$set(count, {

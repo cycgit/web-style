@@ -25,8 +25,21 @@
     用户输入内容后可以按 <code>enter</code> 键增加新标签，可以按 <code>delete</code> 键删除最后一个标签，也可以通过每个标签右边的叉叉删除指定标签。
   </p>
   <div id="app">
+      <div class="box-920">
+        <div class="row">
+          <div class="label col-2">商品ids:</div>
+          <div class="col-4">
+            <v-tags :source.sync="source"></v-tags>
+          </div>
+        </div>
 
-    <v-tags :source.sync="source"></v-tags>
+        <div class="row">
+          <pre>
+            {{source | json 4}}
+          </pre>
+        </div>
+      </div>
+
 
   </div>
 
@@ -39,7 +52,7 @@
         source: ['英雄联盟', '骚猪', '对对对对对我是娇妹', '小轩在不在']
       },
       components: {
-        'v-tags': tags
+        'v-tags': components.tags
       }
     })
   </script>

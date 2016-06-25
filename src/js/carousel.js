@@ -66,6 +66,5 @@
       }
     }
   })
-
   window.carousel = carousel
 })(Vue, window)

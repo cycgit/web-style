@@ -1,11 +1,15 @@
-var gulp = require('gulp')
-var sass = require('gulp-sass')
-var clean = require('gulp-clean-css')
-var rename = require("gulp-rename");
-var autoprefixer = require('gulp-autoprefixer')
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const clean = require('gulp-clean-css')
+const rename = require("gulp-rename");
+const autoprefixer = require('gulp-autoprefixer')
+const babel = require('gulp-babel')
+const concat = require('gulp-concat')
+const uglify = require('gulp-uglify')
 
 
-var SASS_PATH = ['src/sass/*.scss', 'src/sass/components/*.scss']
+const SASS_PATH = ['src/sass/*.scss', 'src/sass/components/*.scss']
+const JS_PATH = ['src/js/*.js']
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -17,8 +21,7 @@ var AUTOPREFIXER_BROWSERS = [
 ]
 
 
-gulp.task('default', ['sass','watch'])
-
+gulp.task('default', ['sass', 'js', 'watch'])
 
 
 gulp.task('sass', function () {
@@ -30,6 +33,17 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('dist/css'))
 })
 
+gulp.task('js', function () {
+  gulp.src(JS_PATH)
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(uglify())
+    .pipe(concat('web-style.js'))
+    .pipe(gulp.dest('dist/js'))
+})
+
 gulp.task('watch', function () {
   gulp.watch(SASS_PATH, ['sass'])
+  gulp.watch(JS_PATH, ['js'])
 })

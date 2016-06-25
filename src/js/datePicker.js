@@ -1,7 +1,7 @@
 (function (Vue, components) {
 
   /**
-   *    选择日期组件
+   *    选择日期组件: datePicker
    *    @params val (10位或者13位) 默认取当前日期
    *
    *    @events lineDate-change(val)
@@ -83,7 +83,6 @@
                       <input type="text" class="input" placeholder="请选择时间" @focus="show=true" :value="out">
                         <i class="iconfont icon-calendar"></i>
                       </div>
-                    
                     <div class="dp" v-show="show" v-el:dp2 transition="slide">
                     <div class="dp-header1">
                        <div class="dp-input-wrap" v-if="showtime">
@@ -99,9 +98,6 @@
                         <div class="dp-text" v-if="!showtime">{{out}}</div>  
                         <i class="iconfont icon-crosscircle" @click="show=false"></i>
                     </div>
-                    
-                    
-                    
                     <div class="dp-header2"><a class="dp-h-1" @click="cy(-1)">«</a><a class="dp-h-2" @click="cm(-1)">‹</a>
                         <span class="dp-ym">{{y}}年 {{m}}月</span>
                         <a class="dp-h-3" @click="cm(1)">›</a><a class="dp-h-4" @click="cy(1)">»</a></div>
@@ -126,8 +122,6 @@
                     </div>
                     <div class="dp-footer"><a>今天</a>  <span class="btn btn-primary btn-sm" @click="show=false">确 定</span></div>
                 </div>
-                
-                
                 </div>
 `
 

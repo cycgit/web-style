@@ -1,7 +1,7 @@
 (function (Vue, components) {
 
   /**
-   *
+   * 时间选择组件: timePicker
    * @params val (08:20:30)
    *
    * @events time-change(val)

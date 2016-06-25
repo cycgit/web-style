@@ -1,4 +1,15 @@
-;(function (Vue, winodw) {
+/**
+ *
+ *
+ *
+ *    菜单组件: menu
+ *    @params source [{"name": "一级tab名字","icon": "tago",routes:[{name: "222", url: "aaa.html"}]
+ *
+ *
+*/
+
+
+(function (Vue, winodw) {
 
 
   var template = `<div class="list" v-for="item in source">
@@ -50,6 +61,12 @@
 
   })
 
-  window.menu = menu
+  components.menu = menu
 
-})(Vue, window)
+
+})(Vue, function () {
+  window.components = window.components ? window.components : {}
+  return window.components
+}())
+
+

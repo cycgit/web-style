@@ -1,7 +1,7 @@
 (function (Vue, components) {
 
   /**
-   *    选择日期组件
+   *    自定义完成组件
    *    @params val (10位或者13位) 默认取当前日期
    *
    *    @events lineDate-change(val)
@@ -14,7 +14,7 @@
                  @keyup="keyUp"
                  v-el:box>
                 <div class="v-input">
-                    <input type="text" class="input" placeholder="输入手机号码" v-model="val" autocomplete="off"
+                    <input type="text" class="input" :placeholder="placeholder" v-model="val" autocomplete="off"
                            @focus="show=true">
                 </div>
                 <div class="v-drop" v-show="show">
@@ -29,7 +29,6 @@
                     </ul>
                 </div>
             </div>`
-
   let autoComplete = Vue.extend({
     template,
     props:{
@@ -41,6 +40,11 @@
       max:{
         coerce(val){
           return val? parseInt(val): 4
+        }
+      },
+      placeholder:{
+        coerce(val){
+            return val? val : ''
         }
       }
     },
@@ -123,7 +127,7 @@
   })
 
 
-
+  components.autoComplete = autoComplete
 
 
 })(Vue, function () {

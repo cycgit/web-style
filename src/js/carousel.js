@@ -69,11 +69,9 @@
       },
       animate() {
         function step() {
-          var
         }
       }
     }
   })
-
   window.carousel = carousel
 })(Vue, window)

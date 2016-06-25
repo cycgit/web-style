@@ -1,8 +1,10 @@
 (function (Vue, window) {
   /*
-  *
-  *
-  *
+  *   window.$confirm
+  *   用法:$confirm.alert(setting)
+  * 
+  *   setting.onOk = function(){}
+  *   setting.onCancel = function(){}
   *
   * */
 
@@ -52,14 +54,13 @@
         document.body.style.overflow = ''
       },
       alert(setting){
-        this.title = setting.title ||  '标题'
-        this.content = setting.content || '内容'
+        this.title = setting.title ||  '提示信息'
+        this.content = setting.content || '确认操作'
         this.onOk = setting.onOk || false
         this.onCancel = setting.onCancel || false
         this.show = true
         document.body.style.overflow = 'hidden'
-
-
+        
       }
     }
   })

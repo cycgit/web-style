@@ -1,4 +1,14 @@
-;(function (Vue, window) {
+/**
+ * 标签组件: timePicker
+ * @params val (08:20:30)
+ *
+ * @events time-change(val)
+ */
+
+
+
+
+(function (Vue, window) {
   var template = `
   <div class="input tags-wrap">
     <div class="tags" transition="tags" :style="{backgroundColor: bgc[item.bgc_no]}" v-for="item in dis_source">
@@ -56,5 +66,8 @@
     }
   })
 
-  window.tags = tags
-})(Vue, window)
+  components.tags = tags
+})(Vue, function () {
+  window.components = window.components ? window.components : {}
+  return window.components
+}())

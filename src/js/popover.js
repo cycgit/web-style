@@ -30,14 +30,8 @@
     }
   })
 
-  function calcPosition(e) {
-    var target = e.target
-    return {
-      x: target.offsetLeft,
-      y: target.offsetTop + target.scrollHeight + 5
-    }
-  }
-
-  window.popover = popover
-  window.calc = calcPosition
-})(Vue, window)
+  components.popover = popover
+})(Vue, function () {
+  window.components = window.components ? window.components : {}
+  return window.components
+}())

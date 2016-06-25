@@ -1,9 +1,8 @@
 ;(function (Vue, window) {
   var template = `
   <div class="v-carousel-wrap">
-    <div :class="['v-carousel-content']" :style="{width: source.length + 1 + '00%', height: contentHeight, left: -currentIndex + '00%'}" >
-      <div class="v-carousel-one" :style="{backgroundImage: 'url(' + item + ')', width: 100 / ( source.length + 1 ) + '%' }" v-for="item in source"></div>
-      <div class="v-carousel-one" :style="{backgroundImage: 'url(' + source[0] + ')', width: 100 / ( source.length + 1 ) + '%' }"></div>
+    <div class="v-carousel-content" :style="{width: source.length + '00%', height: contentHeight, left: -100 * activeIndex + '%'}" >
+      <div class="v-carousel-one" :style="{backgroundImage: 'url(' + item + ')', width: 100 / ( source.length ) + '%' }" v-for="item in source"></div>
     </div>
     <ul class="v-carousel-dots" :style="{height: ctrlHeight}">
       <li v-for="item in source" @click="toTarget($index)" :class="$index == activeIndex ? 'active' : ''">&bull;</li>
@@ -38,8 +37,7 @@
         this.autoPlay()
       }
       return {
-        targetIndex: 0,
-        currentIndex: 0,
+        activeIndex: 0,
         timer: ''
       }
     },
@@ -48,28 +46,22 @@
         if(this.activeIndex == index){
           return
         }else {
+          clearInterval(this.timer)
           this.activeIndex = index
+          this.move(this.activeIndex)
           this.autoPlay()
         }
       },
       autoPlay() {
-        clearInterval(this.timer)
         this.timer = setInterval(function() {
-
-          // if(this.activeIndex >= this.source.length){
-          //   this.animate = false
-          //   this.activeIndex = 0
-          //   this.animate = true
-          // }
-          // console.log(this.activeIndex);
+          console.log(Date.now());
           this.activeIndex++
-          this.animate()
-
-        }.bind(this), this.delayTime);
+          this.move(this.activeIndex)
+        }.bind(this), this.delayTime)
       },
-      animate() {
-        function step() {
-          var
+      move(index) {
+        if(this.activeIndex >= this.source.length){
+          this.activeIndex = 0
         }
       }
     }

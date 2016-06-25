@@ -7,11 +7,11 @@
 
 (function (Vue, window) {
   var template = `
-  <div class="input tags-wrap">
+  <div class="input tags-wrap" @paste="pasteText($event)">
     <div class="tags" transition="tags" :style="{backgroundColor: bgc[item.bgc_no]}" v-for="item in disSource">
-      <span class="content">{{item.text}}</span><span class="del" @click="del($index, false)">&times;</span>
+      <span class="content">{{item.text}}</span><span class="del" @click="delTag($index, false)">&times;</span>
     </div>
-    <input class="tags-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)" @keydown.delete="del(source.length - 1, true)">
+    <input class="tags-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="addTag(text)" @keydown.delete="delTag(source.length - 1, true)">
   </div>`
 
   var tags = Vue.extend({
@@ -38,7 +38,12 @@
       }
     },
     methods: {
-      add(text){
+      pasteText(e) {
+        e.preventDefault()
+        var text = (e.clipboardData || window.clipboardData).getData('text')
+        this.addTag(text)
+      },
+      addTag(text){
         if(text != ''){
           var count = this.source.length
           this.source.$set(count, text)
@@ -49,7 +54,7 @@
           this.text = ''
         }
       },
-      del(index, way){
+      delTag(index, way){
         if(way){
           if(index >=0 && this.text == ''){
             this.source.splice(index, 1)

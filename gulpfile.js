@@ -17,7 +17,7 @@ var AUTOPREFIXER_BROWSERS = [
   'chrome >= 34',
   'safari >= 7',
   'ios >= 7',
-  'android >= 4.4',
+  'android >= 4.4'
 ]
 
 

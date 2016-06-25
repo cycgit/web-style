@@ -1,9 +1,9 @@
 ;(function (Vue, window) {
   var template = `
-  <div class="popover-wrap" v-show="show" transition="popover" :style="{left: position.x + 'px', top: position.y + 'px'}">
-    <div class="popover-box">
-      <div class="popover-title">{{title}}</div>
-      <div class="popover-content">{{content}}</div>
+  <div class="v-popover-wrap" v-show="show" transition="v-popover">
+    <div class="v-popover-box">
+      <div class="v-popover-title">{{title}}</div>
+      <div class="v-popover-content">{{content}}</div>
     </div>
   </div>`
 
@@ -29,14 +29,8 @@
     }
   })
 
-  function calcPosition(e) {
-    var target = e.target
-    return {
-      x: target.offsetLeft,
-      y: target.offsetTop + target.scrollHeight + 5
-    }
-  }
-
-  window.popover = popover
-  window.calc = calcPosition
-})(Vue, window)
+  components.popover = popover
+})(Vue, function () {
+  window.components = window.components ? window.components : {}
+  return window.components
+}())

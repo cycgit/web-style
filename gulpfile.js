@@ -41,7 +41,6 @@ gulp.task('js', function () {
     .pipe(uglify())
     .pipe(concat('web-style.js'))
     .pipe(gulp.dest('dist/js'))
-
 })
 
 gulp.task('watch', function () {

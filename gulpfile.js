@@ -5,7 +5,7 @@ var rename = require("gulp-rename");
 var autoprefixer = require('gulp-autoprefixer')
 
 
-var SASS_PATH = 'src/sass/index.scss'
+var SASS_PATH = ['src/sass/*.scss', 'src/sass/components/*.scss']
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -22,7 +22,7 @@ gulp.task('default', ['sass','watch'])
 
 
 gulp.task('sass', function () {
-  gulp.src(SASS_PATH)
+  gulp.src('src/sass/index.scss')
     .pipe(sass())
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(clean())

@@ -2,11 +2,13 @@
 .v-carousel-wrap{
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .v-carousel-content{
-  height: 100%;
   position: relative;
+}
+.v-carousel-animation{
+  transition: left .6s ease;
 }
 .v-carousel-one{
   height: 100%;
@@ -14,4 +16,27 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.v-carousel-dots{
+  background-color: inherit;
+  text-align: center;
+  overflow: hidden;
+  li{
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    margin: auto 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #999;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    &:hover{
+      color: #666;
+    }
+  }
+  .active{
+    color: #000 !important;
+  }
 }

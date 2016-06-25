@@ -10,8 +10,8 @@
     margin: 5px;
   }
   .wrap{
-    width: 500px;
-    height: 200px;
+    width: 800px;
+    height: 500px;
     margin: auto;
   }
   </style>
@@ -22,7 +22,7 @@
   </p>
 
   <div class="wrap" id="app">
-    <v-carousel :source="source"></v-carousel>
+    <v-carousel :source="source" :content-height="'450px'" :ctrl-height="'50px'"></v-carousel>
   </div>
   <script src="../dist/js/vue.js"></script>
   <script src="../src/js/carousel.js" charset="utf-8"></script>

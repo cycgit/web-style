@@ -14,20 +14,9 @@
             </div>
             <div class="modal-body">
             
-                <div class="form">
-                    <div class="row">
-                        <div class="col-2 label col-offset-2">账号:</div>
-                        <div class="col-4">
-                            <input type="text" class="input">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2 label col-offset-2">密码:</div>
-                        <div class="col-4">
-                            <input type="text" class="input">
-                        </div>
-                    </div>
-                </div>
+                <slot></slot>
+                
+                
             </div>
             <div class="modal-footer">
                 <button class="btn">取 消</button>

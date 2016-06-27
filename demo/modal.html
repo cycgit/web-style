@@ -43,63 +43,39 @@
 -->
 
 
-<div class="show" id="app">
-    <div class="wrap">
-        <button class="btn btn-danger" @click="click">删 除</button>
-        <p>{{ msg }}</p>
-    </div>
-
-    <div class="row" style="height: 100px">
-
-        <div class="popover-wrap">
-            <div class="popover-box">
-                <div class="popover-title">标题</div>
-                <div class="popover-content">这是很长的内容喔喔喔哦哦</div>
-                <div class="popover-arrow popover-arrow-bottom"></div>
-            </div>
-        </div>
+<div class="box-920" id="app" style="padding: 10px">
 
 
-
-
-    </div>
 
     <div class="row">
-        <div class="popover-wrap">
-        <div class="popover-box">
-            <div class="popover-title">标题</div>
-            <div class="popover-content">这是很长的内容喔喔喔哦哦</div>
-            <div class="popover-arrow popover-arrow-top"></div>
-        </div>
+        <div class="col-4">
+            <button class="btn btn-info" @click="$refs.model.show = true">按 钮</button>
         </div>
     </div>
+
+    <v-model v-ref:model></v-model>
+
+
+
+
 </div>
 
-
-
 <script src="../dist/js/vue.js"></script>
-<!--<script src="../src/js/confirm.js"></script>-->
-
+<script src="../src/js/modal.js"></script>
 <script>
 
-    //$confirm是全局的变量
-//
-//    var app = new Vue({
-//        el: '#app',
-//        data:{
-//            msg: ''
-//        },
-//        methods:{
-//            click(){
-//                var t = this
-//                $confirm.alert({title: '你确定删除吗?', content: '删除不可以恢复...', onOk: function () {
-//                    t.msg = '你刚点了确定'
-//                }, onCancel: function () {
-//                    t.msg = '你刚点了取消'
-//                }})
-//            }
-//        }
-//    })
+var app = new Vue({
+    el: '#app',
+    components:{
+        'v-model': components.modal
+    },
+    methods:{
+        modal(){
+            this.$refs.model.show = true
+        }
+    }
+})
+
 </script>
 </body>
 </html>

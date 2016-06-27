@@ -83,6 +83,7 @@
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 6px;
+  transition: transform .3s ease;
 }
 
 
@@ -110,6 +111,7 @@
     right: 20px;
     top: 15px;
     font-size: 14px;
+    cursor: pointer;
   }
   h3{
     font-size: 14px;

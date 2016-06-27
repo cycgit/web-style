@@ -10,7 +10,7 @@
         <div class="modal-box">
             <div class="modal-header">
                 <h3>{{title}}</h3>
-                <i class="iconfont icon-cross" @click="mm"></i>
+                <i class="iconfont icon-cross" @click="show=false"></i>
             </div>
             <div class="modal-body">
             
@@ -34,7 +34,7 @@
     },
     data(){
         return {
-          show: true
+          show: false
         }
     }
   })

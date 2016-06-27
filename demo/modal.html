@@ -45,51 +45,33 @@
 
 <div class="box-920" id="app" style="padding: 10px">
 
-    <div class="row" style="height: 100px">
-        <div class="col-10">
-            <div class="popover-wrap">
-                <div class="popover-box">
-                    <div class="popover-title">标题</div>
-                    <div class="popover-content">这是很长的内容喔喔喔哦哦</div>
-                    <div class="popover-arrow popover-arrow-bottom"></div>
-                </div>
-            </div>
 
-
-
-        </div>
-
-
-    </div>
 
     <div class="row">
         <div class="col-4">
-            <div class="popover-wrap">
-                <div class="popover-box">
-                    <div class="popover-title">标题</div>
-                    <div class="popover-content">这是很长的内容喔喔喔哦哦</div>
-                    <div class="popover-arrow popover-arrow-top"></div>
-                </div>
-            </div>
+            <button class="btn btn-info" @click="$refs.model.show = true">按 钮</button>
         </div>
+    </div>
 
-    </div>
-    
-    <div class="row">
-        <div class="col-4">
-            <button class="btn btn-info">按 钮</button>
-        </div>
-    </div>
+    <v-model v-ref:model></v-model>
+
+
+
 </div>
 
 <script src="../dist/js/vue.js"></script>
-<script src="../src/js/model.js"></script>
+<script src="../src/js/modal.js"></script>
 <script>
 
 var app = new Vue({
     el: '#app',
     components:{
-        'v-model': components.model
+        'v-model': components.modal
+    },
+    methods:{
+        modal(){
+            this.$refs.model.show = true
+        }
     }
 })
 

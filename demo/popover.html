@@ -6,20 +6,29 @@
   <title>Popover 气泡卡片</title>
   <link rel="stylesheet" href="../dist/css/web-style.css">
   <style media="screen">
-    .btn{
-      margin: 50px;
+    .readme{
+      margin: 5px;
     }
-    span{
-      margin: 1px;
-      border: 1px solid red;
+    #app{
+      width: 200px;
+      text-align: center;
+      margin-top: 50px;
+      position: absolute;
     }
   </style>
 </head>
 <body>
+    <p class="readme">
+      一个气泡弹出卡片，弹出位置目前可选出现在目标标签的上方或者下方，传入参数：<br>
+      <code>title: 卡片标题 （必须）</code><br>
+      <code>content: 卡片从容 （必须）</code><br>
+      <code>placement: 卡片位置，默认在上方 （可选）</code>
+    </p>
   <div id="app">
 
-    <button class="btn btn-primary" @mouseover="popShow($event) | debounce 500" @mouseout="popHide">弹出气泡卡片</button>
-    <v-popover :show="show" :title="pop_title" :content="pop_content" :position="pop_position"></v-popover>
+    <v-popover :title="pop_title" :content="pop_content">
+      <button class="btn btn-primary">点击弹出气泡卡片</button>
+    </v-popover>
 
   </div>
 
@@ -29,23 +38,11 @@
     var btn = new Vue({
       el: '#app',
       data: {
-        show: false,
-        pop_title: '',
-        pop_content: '',
-        pop_position: {}
-      },
-      methods: {
-        popShow: function (e) {
-          this.pop_title = '我是标题'
-          this.pop_content = '我是一段提示内容'
-          this.show = true
-        },
-        popHide: function () {
-          this.show = false
-        }
+        pop_title: '标题',
+        pop_content: '气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容'
       },
       components: {
-        'v-popover': popover
+        'v-popover': components.popover
       }
     })
   </script>

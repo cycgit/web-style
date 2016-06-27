@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<div class="line tb" style="width: 400px">
+<div class="line tb" id="app">
     <div class="table-responsive">
 
         <table class="table table-sm">
@@ -30,26 +30,31 @@
             <thead>
             <tr>
                 <th>订单号</th>
-                <th style="width: 50px;">购买商品</th>
+                <th>购买商品</th>
                 <th>买家手机</th>
-
+                <th>买家手机</th>
+                <th>买家手机</th>
+                <th>买家手机</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>1408564</td>
-                <td><a>埃及橙/2个 约400g × 1</a></td>
-                <td><br>6666666666666</td>
-
+                <td style="max-width: 100px">埃及橙/2个 约400g × 1222222</td>
+                <td>6666666666666</td>
+                <td>6666666666666</td>
+                <td>6666666666666</td>
+                <td>6666666666666</td>
             </tr>
-
-
 
 
             </tbody>
         </table>
 
     </div>
+
+    <v-pagination :cur="cur" :all="all" v-on:page-change="change"></v-pagination>
+
 </div>
 
 <div class="line tb">
@@ -85,15 +90,16 @@
         </tbody>
     </table>
 
-    <ul class="pagination">
-        <li>«</li>
-        <li class="active"><a href="11">1</a></li>
-        <li><a href="22">2</a></li>
-        <li><a href="sas">3</a></li>
-        <li class="jump"></li>
-        <li><a href="23">4</a></li>
-        <li>»</li>
-    </ul>
+
+    <!--<ul class="pagination">-->
+        <!--<li>«</li>-->
+        <!--<li class="active"><a href="11">1</a></li>-->
+        <!--<li><a href="22">2</a></li>-->
+        <!--<li><a href="sas">3</a></li>-->
+        <!--<li class="jump"></li>-->
+        <!--<li><a href="23">4</a></li>-->
+        <!--<li>»</li>-->
+    <!--</ul>-->
 </div>
 
 
@@ -200,6 +206,26 @@
     </table>
 </div>
 
+<script src="../dist/js/vue.js"></script>
+<script src="../src/js/pagination.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            cur: 8,
+            all: 50
+        },
+        methods:{
+            change(num){
+//                console.log(num)
+                this.cur = num
+            }
+        },
+        components:{
+            'v-pagination': components.pagination
+        }
+    })
 
+</script>
 </body>
 </html>

@@ -155,7 +155,7 @@
 }
 .v-popover-box{
   box-sizing: border-box;
-  min-width: 177px;
+  width: 177px;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #d9d9d9;
@@ -173,6 +173,7 @@
 .v-popover-content{
   padding: 8px 16px;
   color: #666;
+  word-break: break-all;
 }
 .v-popover-arrow{
   position: absolute;

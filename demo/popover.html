@@ -7,26 +7,75 @@
   <link rel="stylesheet" href="../dist/css/web-style.css">
   <style media="screen">
     .readme{
+      width: 500px;
       margin: 5px;
     }
     #app{
-      width: 200px;
+      width: 400px;
       text-align: center;
-      margin-top: 50px;
-      position: absolute;
     }
+    @media (max-width: 500px) {
+        .readme{
+          width: 95%;
+          margin: auto;
+        }
+      }
   </style>
 </head>
 <body>
-    <p class="readme">
-      一个气泡弹出卡片，弹出位置目前可选出现在目标标签的上方或者下方，传入参数：<br>
-      <code>title: 卡片标题 （必须）</code><br>
-      <code>content: 卡片从容 （必须）</code><br>
-      <code>placement: 卡片位置，默认在上方 （可选）</code>
-    </p>
+  <div class="line tb readme">
+      <table class="table table-striped table-hover">
+          <caption>一个气泡弹出卡片，弹出位置目前可选出现在目标标签的上方或者下方，参数：</caption>
+          <thead>
+          <tr>
+              <th>参数</th>
+              <th>说明</th>
+              <th>类型</th>
+              <th>默认值</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <th><code>title</code></th>
+              <td>气泡卡片标题（必须）</td>
+              <td><code>String</code></td>
+              <td>标题</td>
+          </tr>
+          <tr>
+              <th><code>content</code></th>
+              <td>气泡卡片内容（必须）</td>
+              <td><code>String</code></td>
+              <td>内容</td>
+          </tr>
+          <tr>
+              <th><code>placement</code></th>
+              <td>气泡卡片位置top/bottom（可选）</td>
+              <td><code>String</code></td>
+              <td>top</td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
   <div id="app">
-
-    <v-popover :title="pop_title" :content="pop_content">
+    <div class="row">
+      <div class="label col-2">标题:</div>
+      <div class="col-10">
+          <input type="text" class="input" v-model="popTitle">
+      </div>
+    </div>
+    <div class="row">
+      <div class="label col-2">内容:</div>
+      <div class="col-10">
+          <input type="text" class="input" v-model="popContent">
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 5px;">
+      <div class="label col-2">位置:</div>
+      <div class="col-10">
+          <input type="text" class="input" v-model="popPlacement">
+      </div>
+    </div>
+    <v-popover :title="popTitle" :content="popContent" :placement="popPlacement">
       <button class="btn btn-primary">点击弹出气泡卡片</button>
     </v-popover>
 
@@ -38,8 +87,9 @@
     var btn = new Vue({
       el: '#app',
       data: {
-        pop_title: '标题',
-        pop_content: '气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容'
+        popTitle: '我是标题',
+        popContent: '气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容气泡内容',
+        popPlacement: 'top'
       },
       components: {
         'v-popover': components.popover

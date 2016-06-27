@@ -7,7 +7,7 @@
     <div class="v-popover-box">
       <div class="v-popover-title">{{title}}</div>
       <div class="v-popover-content">{{content}}</div>
-      <div :class="['v-popover-arrow', placement == 'top' ? 'v-popover-arrow-top' : v-popover-arrow-bottom]" :style="{left: arrowLeft + 'px'}"></div>
+      <div :class="['v-popover-arrow', placement == 'top' ? 'v-popover-arrow-top' : 'v-popover-arrow-bottom']" :style="{left: arrowLeft + 'px'}"></div>
     </div>
   </div>`
 

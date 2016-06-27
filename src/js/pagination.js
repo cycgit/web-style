@@ -62,11 +62,8 @@
         if(isNaN(parseInt(index))){
           return
         }
-
         if(index == this.cur) return
-
           this.num = ""
-
           this.$dispatch('page-change', index)
       }
     }

@@ -33,7 +33,9 @@ input,textarea{
     background-color: #fff;
     background-image: none;
     width: 100%;
-    height: 100px;
+    min-height: 100px;
+    padding: 4px 7px;
+    box-sizing: border-box;
 }
 
 .input{

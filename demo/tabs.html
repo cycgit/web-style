@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Tab切换</title>
+  <link rel="stylesheet" href="../dist/css/web-style.css">
+</head>
+<body>
+
+  <div id="app">
+
+  </div>
+
+  <script src="../dist/js/vue.js"></script>
+  <script src=""></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      source: [
+        {
+          title: '选项卡一',
+          content: '选项卡一的内容'
+        },
+        {
+          title: '选项卡二',
+          content: '选项卡二的内容'
+        },
+        {
+          title: '选项卡三',
+          content: '选项卡三的内容'
+        }
+      ]
+    }
+  })
+  </script>
+</body>
+</html>

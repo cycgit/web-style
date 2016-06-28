@@ -1,6 +1,6 @@
 ;(function (Vue, window) {
   var template = `
-  <div class="v-popover-tag" @click="pop($event)">
+  <div class="v-popover-tag" @click.stop="pop($event)">
     <slot></slot>
   </div>
   <div class="v-popover-wrap" :style="{left: x + 'px', top: y + 'px', visibility: show ? 'visible' : 'hidden'}" v-el:pop>

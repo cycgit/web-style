@@ -6,19 +6,11 @@ Icon?
 
 # npm
 node_modules
-node_modules/
 *.log
 *.gz
 
 # webstorm
-.idea/
 .idea
 
 
-＃key
-key.js
 
-static/html
-static/img
-
-data.json

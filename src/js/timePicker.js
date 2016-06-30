@@ -1,3 +1,4 @@
+
 (function (Vue, components) {
 
   /**
@@ -194,6 +195,9 @@
   })
 
   components.timePicker = timePicker
+
+
+  return timePicker
 })(Vue, function () {
   window.components = window.components ? window.components : {}
   return window.components

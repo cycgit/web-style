@@ -1,0 +1,37 @@
+.v-tabs-nav-wrap{
+  width: 100%;
+  overflow-x: hidden;
+  height: 37px;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 16px;
+  .v-tabs-nav{
+    // width: 576px;
+    overflow-x: scroll;
+    position: relative;
+    float: left;
+    width: auto;
+    height: 100%;
+    .v-tabs-nav-item{
+      float: left;
+      padding: 8px 20px;
+      margin-right: 24px;
+      cursor: pointer;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: transparent;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+    .v-tabs-nav-active{
+      border-bottom-color: #2db7f5;
+    }
+  }
+}
+.v-tabs-content-wrap{
+  width: 100%;
+  overflow-x: hidden;
+  .v-tabs-content{
+    position: relative;
+  }
+}

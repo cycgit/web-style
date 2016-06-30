@@ -5,11 +5,31 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Tab切换</title>
   <link rel="stylesheet" href="../dist/css/web-style.css">
+  <style media="screen">
+    #app{
+      width: 500px;
+      margin-top: 10px;
+      border-top: 1px solid black;
+    }
+  </style>
 </head>
 <body>
 
   <div id="app">
-
+    <div class="v-tabs-nav-wrap">
+      <div class="v-tabs-nav">
+        <div class="v-tabs-nav-item v-tabs-nav-active">选项卡一</div>
+        <div class="v-tabs-nav-item">选项卡二</div>
+        <div class="v-tabs-nav-item">选项项卡三</div>
+        <div class="v-tabs-nav-item">选项卡四</div>
+        <div class="v-tabs-nav-item">选项卡五</div>
+      </div>
+    </div>
+    <div class="v-tabs-content-wrap">
+      <div class="v-tabs-content">
+        <div class="v-tabs-content-item"></div>
+      </div>
+    </div>
   </div>
 
   <script src="../dist/js/vue.js"></script>

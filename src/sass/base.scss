@@ -56,8 +56,9 @@ a{
 }
 
 .clear{
-  &:after{
-    content: " ";
+  &::after{
+    content: "";
+    height: 0;
     display: block;
     clear:both;
   }
@@ -68,9 +69,10 @@ a{
     width: 100%;
     height: auto;
     display: block;
-    &:after{
-        content: " ";
+    &::after{
+        content: "";
         display: block;
+        height: 0;
         clear:both;
     }
 
@@ -111,7 +113,7 @@ $allwidth: 100%;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
-  &:after{
+  &::after{
     content: "\e6a1";
   }
   animation: spin 1s linear infinite;

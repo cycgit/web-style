@@ -5,7 +5,7 @@
  * @events time-change(val)
  */
 
-(function (Vue, window) {
+(function (Vue, components) {
   var template = `
   <div class="input tags-wrap" @paste="pasteText($event)">
     <div class="tags" transition="tags" :style="{backgroundColor: bgc[item.bgc_no]}" v-for="item in disSource">

@@ -15,7 +15,6 @@
         </div>
     </div>`
 
-
   var element = document.createElement('div');
   element.id = 'V-message'
   element.innerHTML = template

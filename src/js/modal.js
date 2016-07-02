@@ -13,10 +13,10 @@
                 <i class="iconfont icon-cross" @click="show=false"></i>
             </div>
             <div class="modal-body">
-            
+
                 <slot></slot>
-                
-                
+
+
             </div>
             <div class="modal-footer">
                 <button class="btn">取 消</button>
@@ -46,6 +46,3 @@
   window.components = window.components ? window.components : {}
   return window.components
 }())
-
-
-

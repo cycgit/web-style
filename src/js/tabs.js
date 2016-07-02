@@ -1,12 +1,8 @@
 ;(function (Vue, components) {
   var template = `
-  <div class="v-tabs-nav-wrap">
-    <div class="v-tabs-nav clear">
-      <div class="v-tabs-nav-item v-tabs-nav-active">选项卡一</div>
-      <div class="v-tabs-nav-item">选项卡二</div>
-      <div class="v-tabs-nav-item">选项卡三</div>
-      <div class="v-tabs-nav-item">选项卡四</div>
-      <div class="v-tabs-nav-item">选项卡五</div>
+  <div class="v-tabs-nav-wrap" v-el:tabs>
+    <div class="v-tabs-nav clear" :style="{width: navWidth + 'px'}">
+      <span class="v-tabs-nav-item" v-for="item in source">{{item.title}}</span>
     </div>
   </div>
   <div class="v-tabs-content">
@@ -15,6 +11,9 @@
 
   var tabs = Vue.extend({
     template,
+    compute: {
+
+    },
     props: {
       source: {
         type: Array,
@@ -23,13 +22,26 @@
     },
     data() {
       return {
-        active: 1
+        active: 1,
+        navWidth: 'auto',
       }
     },
     methods: {
 
+    },
+    ready: function () {
+      // 计算宽度
+      var arr = this.$els['tabs'].querySelectorAll('.v-tabs-nav-item');
+      var width = 0
+      arr.forEach(function (item) {
+        // 不能用offsetWidth
+        width+=Math.ceil(getComputedStyle(item, null).width.slice(0, -2)) + 64
+      })
+      this.navWidth = width - 24
     }
   })
+
+  components.tabs = tabs
 })(Vue, function () {
   window.components = window.components ? window.components : {}
   return window.components

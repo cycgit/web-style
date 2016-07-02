@@ -33,9 +33,9 @@
       var arr = this.$els['tabs'].querySelectorAll('.v-tabs-nav-item');
       var width = 0
       arr.forEach(function (item) {
-        width+=Math.ceil(getComputedStyle(item, null).width.slice(0, -2)) + 40
+        width+=Math.ceil(getComputedStyle(item, null).width.slice(0, -2)) + 64
       })
-      this.navWidth = width + (arr.length - 1) * 24
+      this.navWidth = width - 24
     }
   })
 

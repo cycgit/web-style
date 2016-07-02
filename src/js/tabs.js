@@ -30,9 +30,11 @@
 
     },
     ready: function () {
+      // 计算宽度
       var arr = this.$els['tabs'].querySelectorAll('.v-tabs-nav-item');
       var width = 0
       arr.forEach(function (item) {
+        // 不能用offsetWidth
         width+=Math.ceil(getComputedStyle(item, null).width.slice(0, -2)) + 64
       })
       this.navWidth = width - 24

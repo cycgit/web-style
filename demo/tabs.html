@@ -16,24 +16,11 @@
 <body>
 
   <div id="app">
-    <div class="v-tabs-nav-wrap">
-      <div class="v-tabs-nav">
-        <div class="v-tabs-nav-item v-tabs-nav-active">选项卡一</div>
-        <div class="v-tabs-nav-item">选项卡二</div>
-        <div class="v-tabs-nav-item">选项项卡三</div>
-        <div class="v-tabs-nav-item">选项卡四</div>
-        <div class="v-tabs-nav-item">选项卡五</div>
-      </div>
-    </div>
-    <div class="v-tabs-content-wrap">
-      <div class="v-tabs-content">
-        <div class="v-tabs-content-item"></div>
-      </div>
-    </div>
+    <v-tabs :source="source"></v-tabs>
   </div>
 
   <script src="../dist/js/vue.js"></script>
-  <script src=""></script>
+  <script src="../src/js/tabs.js"></script>
   <script>
   var app = new Vue({
     el: '#app',
@@ -44,14 +31,25 @@
           content: '选项卡一的内容'
         },
         {
-          title: '选项卡二',
+          title: '选项卡awdawdqwa二',
           content: '选项卡二的内容'
         },
         {
           title: '选项卡三',
           content: '选项卡三的内容'
+        },
+        {
+          title: '选项卡四',
+          content: '选项卡四的内容'
+        },
+        {
+          title: '选项卡五',
+          content: '选项卡五的内容'
         }
       ]
+    },
+    components: {
+      'v-tabs': components.tabs
     }
   })
   </script>

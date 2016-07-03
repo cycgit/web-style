@@ -1,5 +1,8 @@
 ## web-style
 基于vue的一套简单精美的web组件。
+<a href="http://cycgit.coding.me/ws-document/">
+参考文档
+</a>
 
 ## 开始
 
@@ -12,6 +15,7 @@
 ## vue组件的使用
 
 所有组件捆绑到components下
+
 
 ```
 new Vue({

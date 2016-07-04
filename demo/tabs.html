@@ -16,7 +16,14 @@
 <body>
 
   <div id="app">
-    <v-tabs :source="source"></v-tabs>
+    <v-tabs :source="source">
+      <div slot="slot-item-{{$index}}" v-for="item in source">{{item.content}}</div>
+      <!-- <div slot="slot-item-0">awefaw</div>
+      <div slot="slot-item-1"></div>
+      <div slot="slot-item-2"></div>
+      <div slot="slot-item-3"></div>
+      <div slot="slot-item-4"></div> -->
+    </v-tabs>
   </div>
 
   <script src="../dist/js/vue.js"></script>

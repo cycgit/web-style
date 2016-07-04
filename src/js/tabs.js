@@ -2,11 +2,13 @@
   var template = `
   <div class="v-tabs-nav-wrap" v-el:tabs>
     <div class="v-tabs-nav clear" :style="{width: navWidth + 'px'}">
-      <span class="v-tabs-nav-item" v-for="item in source">{{item.title}}</span>
+      <div class="v-tabs-nav-item" v-for="item in source">{{item.title}}</div>
     </div>
   </div>
   <div class="v-tabs-content">
-    hello world
+    <div class="v-tabs-item" v-for="item in source">
+      <slot name="slot-item-{{$index}}"></slot>
+    </div>
   </div>`
 
   var tabs = Vue.extend({

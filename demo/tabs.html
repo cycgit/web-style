@@ -17,7 +17,7 @@
 
   <div id="app">
     <v-tabs :source="source">
-      <div slot="slot-item-{{$index}}" v-for="item in source">{{item.content}}</div>
+      <div v-for="item in source">{{item.content}}</div>
       <!-- <div slot="slot-item-0">awefaw</div>
       <div slot="slot-item-1"></div>
       <div slot="slot-item-2"></div>

@@ -7,6 +7,7 @@
   .v-tabs-nav{
     position: relative;
     height: 100%;
+    transition: left .6s ease;
     .v-tabs-nav-item{
       float: left;
       padding: 8px 20px;
@@ -24,10 +25,16 @@
     }
   }
 }
-.v-tabs-content-wrap{
+.v-tabs-wrap{
   width: 100%;
   overflow-x: hidden;
   .v-tabs-content{
     position: relative;
+    display: flex;
+    transition: left .6s cubic-bezier(0.65, 0.05, 0.36, 1);;
+    &>*{
+      display: block;
+      flex: 1;
+    }
   }
 }

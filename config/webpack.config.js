@@ -14,7 +14,7 @@ module.exports = {
       loader: 'babel'
     }, {
       test: /\.less$/,
-      loader: 'less'
+      loader: 'style!css!less'
     }]
   },
   babel: {

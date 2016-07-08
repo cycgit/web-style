@@ -1,5 +1,5 @@
 import hello from './Hello.vue'
-
+require('../less/index.less')
 
 const WebStyle = {
   hello

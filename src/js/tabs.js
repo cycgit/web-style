@@ -2,12 +2,12 @@
   var template = `
   <div class="v-tabs-nav-wrap" v-el:tabs>
     <div class="v-tabs-nav clear" :style="{width: navWidth + 'px'}">
-      <div class="v-tabs-nav-item" v-for="item in source">{{item.title}}</div>
+      <div class="v-tabs-nav-item" v-for="item in source" @click="switch($index)">{{item.title}}</div>
     </div>
   </div>
-  <div class="v-tabs-content">
-    <div class="v-tabs-item" v-for="item in source">
-      <slot name="slot-item-{{$index}}"></slot>
+  <div class="v-tabs-wrap">
+    <div class="v-tabs-content" :style="{width: source.length * 100 + '%', left: - active + '00%'}">
+      <slot></slot>
     </div>
   </div>`
 
@@ -24,12 +24,16 @@
     },
     data() {
       return {
-        active: 1,
+        active: 0,
         navWidth: 'auto',
       }
     },
     methods: {
-
+      switch(index){
+        if(this.active != index){
+          this.active = index
+        }
+      }
     },
     ready: function () {
       // 计算宽度

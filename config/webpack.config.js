@@ -1,8 +1,10 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
   entry: "./src/components/index.js",
   output: {
-    path: './build',
-    filename: "web-style.js"
+    path: './dist',
+    filename: "./js/web-style.js"
   },
   module: {
     loaders: [{
@@ -13,8 +15,8 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel'
     }, {
-      test: /\.less$/,
-      loader: 'style!css!less'
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract("css!sass")
     }]
   },
   babel: {
@@ -24,6 +26,13 @@ module.exports = {
   vue: {
     autoprefixer: {
       browsers: ['android >= 4.2']
+    },
+    loaders: {
+      scss: ExtractTextPlugin.extract("css!sass")
+      // css: ExtractTextPlugin.extract("css")
     }
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin("./css/web-style.css")
+  ]
 };

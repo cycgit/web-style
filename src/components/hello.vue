@@ -15,8 +15,11 @@
     }
 </script>
 
-<style lang="css">
+<style lang="scss">
     .text{
         color: red;
+        .xx{
+            color: honeydew;
+        }
     }
 </style>

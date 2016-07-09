@@ -1,8 +1,11 @@
 import hello from './Hello.vue'
-require('../less/index.less')
+// import timePicker from './TimePicker.vue'
+require('../sass/index.scss')
+// require('../less/a.css')
 
 const WebStyle = {
-  hello
+  hello,
+  timePicker
 }
 if(typeof window != 'undefined') window.WebStyle = WebStyle
 

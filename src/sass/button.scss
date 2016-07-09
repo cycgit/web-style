@@ -24,41 +24,32 @@
     background: darken(#f7f7f7, 3%);
     transition: none;
   }
-  &:disabled{
+  &:disabled {
     color: #ccc;
     cursor: no-drop;
   }
 }
 
-@mixin color($color: #fff) {
-  color: #fff;
-  background-color: $color;
-  border-color: $color;
-}
-
-@mixin active($color: #fff) {
-  color: #fff;
-  background-color: $color;
-  border-color: $color;
-  transition: none;
-}
 $primary-color: #2db7f5;
 $success-color: #5FBC29;
 $info-color: #01B3CA;
 $warning-color: #FAC450;
 $danger-color: #E01515;
 
-
 @mixin btn($color: #fff) {
-  @include color($color);
+
+  color: #fff;
+  background-color: $color;
+  border-color: $color;
+
   &:hover {
-    @include color(lighten($color, 5%));
+    background-color: (lighten($color, 5%));
   }
   &:active {
-    @include active(darken($color, 5%));
+    background-color: (darken($color, 5%));
   }
-  &:disabled{
-    @include active(lighten($color, 20%));
+  &:disabled {
+    background-color: (lighten($color, 20%));
     cursor: no-drop;
   }
 }
@@ -90,7 +81,6 @@ $danger-color: #E01515;
 .btn-sm {
   padding: 0px 10px;
 }
-
 
 .btn-block {
   display: block;

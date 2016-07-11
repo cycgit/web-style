@@ -183,10 +183,92 @@
 </script>
 
 
-<style>
-.bo{
-    color: black;
-}
+<style style="scss">
 
+    .tp {
+        width: 168px;
+        height: 178px;
+        border-radius: 6px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+        border: 1px solid #ccc;
+        line-height: 1.5;
+        background: #fff;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        z-index: 102;
+    }
+
+    .tp-header {
+        padding: 6px;
+        position: relative;
+        border-bottom: 1px solid #e9e9e9;
+        input {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            cursor: auto;
+            line-height: 1.5;
+            outline: 0;
+            color: #666;
+            &::selection {
+                background: #4BB8FF;
+                color: #fff;
+            }
+        }
+        i {
+            position: absolute;
+            right: 10px;
+            top: 6px;
+            font-size: 12px;
+            color: #ccc;
+            transition: color ease .3s;
+            cursor: pointer;
+            &:hover {
+                color: #999;
+            }
+        }
+    }
+
+    .tp-body {
+        ul {
+            float: left;
+            height: 144px;
+            width: 55px;
+            overflow-y: scroll;
+
+            .tp-active {
+                background: #f7f7f7;
+                font-weight: 700;
+
+                &:hover {
+                    background: #f7f7f7;
+                }
+            }
+            li {
+                height: 24px;
+                line-height: 24px;
+                text-align: center;
+                transition: background 0.3s ease;
+                cursor: pointer;
+                &:hover {
+                    background: #eaf8fe;
+                }
+            }
+            &:after {
+                content: '';
+                display: block;
+                height: 120px;
+
+            }
+        }
+        .tp-line {
+            float: left;
+            width: 1px;
+            height: 144px;
+            background: #e9e9e9
+        }
+    }
 
 </style>

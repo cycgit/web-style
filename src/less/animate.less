@@ -1,0 +1,22 @@
+.fade-transition {
+    transition: opacity .3s;
+}
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-leave {
+    opacity: 0;
+}
+.slide-transition {
+    transition: transform .3s ease, opacity .3s ease;
+    transform: translate(0, 0);
+}
+.slide-enter{
+    transform: translate(0, 5px);
+    opacity: 0;
+}
+.slide-leave{
+    transform: translate(0, 30px);
+    opacity: 0;
+}

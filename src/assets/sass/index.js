@@ -1,1 +1,1 @@
-require('./index.scss')
+require('./fonts.css')

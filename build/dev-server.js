@@ -3,6 +3,7 @@ var express = require('express')
 var webpack = require('webpack')
 var config = require('../config')
 var proxyMiddleware = require('http-proxy-middleware')
+var shelljs = require('shelljs')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
@@ -62,4 +63,5 @@ module.exports = app.listen(port, function (err) {
     return
   }
   console.log('Listening at http://localhost:' + port + '\n')
+  shelljs.exec(`open http://localhost:${config.dev.port}/index.html`)
 })

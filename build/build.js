@@ -25,6 +25,8 @@ cp('-R', 'static/', assetsPath)
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
   if (err) throw err
+  var clearPath = path.resolve('dist')
+  rm(path.join(clearPath, 'css/static.css'))
   process.stdout.write(stats.toString({
     colors: true,
     modules: false,

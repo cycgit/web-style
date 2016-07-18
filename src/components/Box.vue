@@ -10,6 +10,8 @@
   }
 </script>
 
-<style>
-
+<style lang="scss">
+.body{
+  display: flex;
+}
 </style>

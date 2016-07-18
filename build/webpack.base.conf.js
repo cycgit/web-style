@@ -2,7 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
-
+var autoprefixer = require('autoprefixer')
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -81,5 +81,8 @@ module.exports = {
   },
   vue: {
     loaders: utils.cssLoaders()
-  }
+  },
+  postcss: [autoprefixer({
+    browsers: ['android >= 4.0']
+  })]
 }

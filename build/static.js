@@ -10,8 +10,7 @@ var webpackConfig = require('./webpack.static.conf')
 
 console.log(
   '  Tip:\n' +
-  '  Built files are meant to be served over an HTTP server.\n' +
-  '  Opening index.html over file:// won\'t work.\n'
+  ' 正在打包公共css.\n'
 )
 
 var spinner = ora('building for production...')

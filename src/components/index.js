@@ -1,9 +1,13 @@
-import hello from './Hello.vue'
-
+import box from './Box.vue'
 
 const WebStyle = {
-  hello
+  box
 }
-if(typeof window != 'undefined') window.WebStyle = WebStyle
+
+window.WebStyle = WebStyle
+
+if (process.env.NODE_ENV === 'production') {
+  require('../assets/sass/index.scss')
+}
 
 module.exports = WebStyle

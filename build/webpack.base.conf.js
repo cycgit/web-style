@@ -2,16 +2,14 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
-console.log(config.build.assetsRoot)
+
 module.exports = {
   entry: {
     app: './src/main.js'
   },
   output: {
-    // path: config.build.assetsRoot,
-    path: './static',
-    // publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-    publicPath: '../',
+    path: config.build.assetsRoot,
+    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
   resolve: {
@@ -61,7 +59,7 @@ module.exports = {
         loader: 'vue-html'
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
@@ -69,11 +67,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'fonts/[name].[ext]'
+          name: utils.assetsPath('fonts/[name].[ext]')
         }
       }
     ]

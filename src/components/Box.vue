@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
-    <div>hello</div>
-  </div>
+  <div>{{msg}}</div>
 </template>
 
 <script>
   export default {
-
+    data () {
+      return {msg: 'aaa'}
+    }
   }
 </script>
 

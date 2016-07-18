@@ -3,12 +3,7 @@ var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {
-
-  if(process.env.NODE_ENV == 'com'){
-    return path.posix.join(config.com.assetsSubDirectory, _path)
-  }else{
-    return path.posix.join(config.build.assetsSubDirectory, _path)
-  }
+  return path.posix.join(config.build.assetsSubDirectory, _path)
 }
 
 exports.cssLoaders = function (options) {

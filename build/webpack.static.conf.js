@@ -12,15 +12,16 @@ var env = process.env.NODE_ENV === 'testing'
 
 var webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    app: './src/components/index.js'
+    app: './src/assets/sass/index.js'
   },
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
   },
   output: {
-    path: 'dist',
+    path: 'static',
     publicPath: '../',
-    filename: 'js/web-style.js'
+    // filename: utils.assetsPath('js/static.js'),
+    filename: 'js/static.js',
   },
   vue: {
     loaders: utils.cssLoaders({
@@ -40,10 +41,13 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     // extract css into its own file
-    new ExtractTextPlugin(utils.assetsPath('css/web-style.css')),
+    new ExtractTextPlugin(utils.assetsPath('css/static.css')),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
+    // split vendor js into its own file
+    // extract webpack runtime and module manifest to its own file in order to
+    // prevent vendor hash from being updated whenever app bundle is updated
   ]
 })
 

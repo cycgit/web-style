@@ -82,13 +82,11 @@
       this.$els.m.scrollTop = this.sm * 24
       this.$els.s.scrollTop = this.ss * 24
 
-
       this.$els.tp.addEventListener('click', function (e) {
         e.stopPropagation()
         return false
       })
-
-
+      
       document.body.addEventListener('click', function () {
         this.show = false
         // if(this.show){

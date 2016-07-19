@@ -9,7 +9,6 @@ new Vue({
     }
   },
   components: {
-    box: WebStyle.Box,
-    'v-confirm': WebStyle.Confirm
+    time: WebStyle.DatePicker
   }
 })

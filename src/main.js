@@ -1,11 +1,15 @@
 import Vue from 'vue'
-import app from './App.vue'
 import WebStyle from './components/index'
-
 /* eslint-disable no-new */
 new Vue({
   el: 'body',
-  components: { app,
-    box: WebStyle.box
+  methods: {
+    toggle () {
+      this.$refs.confirm.alert('显示成功')
+    }
+  },
+  components: {
+    box: WebStyle.Box,
+    'v-confirm': WebStyle.Confirm
   }
 })

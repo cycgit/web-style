@@ -10,10 +10,10 @@ var webpackConfig = require('./webpack.static.conf')
 
 console.log(
   '  Tip:\n' +
-  ' 正在打包公共css.\n'
+  ' 开始打包公共css.\n'
 )
 
-var spinner = ora('building for production...')
+var spinner = ora('正在打包公共的css...')
 spinner.start()
 
 var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)

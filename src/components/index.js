@@ -1,7 +1,10 @@
-import box from './Box.vue'
-
+import Box from './Box.vue'
+import Message from './Message.vue'
+import Confirm from './Confirm.vue'
 const WebStyle = {
-  box
+  Box,
+  Message,
+  Confirm
 }
 
 window.WebStyle = WebStyle

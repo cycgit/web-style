@@ -52,7 +52,12 @@ new Vue({
 })
 ```
 ## 浏览器使用
+
 > **Web-Style** 依赖 **vue** , 必须在 **web-style**前引入.
+
+
+
+
 ```
 <script src="path/to/vue.js"></script>
 <script src="path/to/web-style.js"></script>

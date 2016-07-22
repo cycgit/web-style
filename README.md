@@ -11,7 +11,8 @@ $ npm install web-style  --save
 
 
 ## 编译文件
-Web-Style 是通过 [webpack][3] 进行打包编译。编译文件都在dist目录下, 目录结构:
+Web-Style 是通过 [webpack][3] 进行打包编译。采用了 [ESLint][5] 规范。编译文件都在dist目录下, 目录结构:
+
 
 ```
 dist/
@@ -40,7 +41,7 @@ src/
 
 # 使用方法
 ## ES6
-```
+```js
 import Vue from 'vue'
 import { Message } from 'Web-style'
 
@@ -58,7 +59,7 @@ new Vue({
 
 
 
-```
+```html
 <script src="path/to/vue.js"></script>
 <script src="path/to/web-style.js"></script>
 <script>
@@ -100,3 +101,4 @@ $ npm run build
   [2]: https://github.com/cycgit/web-style/
   [3]: http://webpack.github.io/
   [4]: https://npm.taobao.org/
+  [5]: http://eslint.org/

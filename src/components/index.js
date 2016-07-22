@@ -3,12 +3,15 @@ import Message from './Message.vue'
 import Confirm from './Confirm.vue'
 import TimePicker from './TimePicker.vue'
 import DatePicker from './DatePicker.vue'
+import Menu from './Menu.vue'
+
 const WebStyle = {
   Box,
   Message,
   Confirm,
   TimePicker,
-  DatePicker
+  DatePicker,
+  Menu
 }
 
 window.WebStyle = WebStyle

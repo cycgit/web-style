@@ -22,7 +22,7 @@
         default: []
       }
     },
-    data() {
+    data () {
       var disSource = []
       this.source.forEach(function (item) {
         var obj = {
@@ -38,13 +38,13 @@
       }
     },
     methods: {
-      pasteText(e) {
+      pasteText (e) {
         e.preventDefault()
         var text = (e.clipboardData || window.clipboardData).getData('text')
         this.addTag(text)
       },
-      addTag(text){
-        if(text.trim() != ''){
+      addTag (text) {
+        if (text.trim() != '') {
           var count = this.source.length
           this.source.$set(count, text)
           this.disSource.$set(count, {
@@ -54,13 +54,13 @@
           this.text = ''
         }
       },
-      delTag(index, way){
-        if(way){
-          if(index >=0 && this.text == ''){
+      delTag (index, way) {
+        if (way) {
+          if (index >= 0 && this.text == '') {
             this.source.splice(index, 1)
             this.disSource.splice(index, 1)
           }
-        }else {
+        } else {
           this.source.splice(index, 1)
           this.disSource.splice(index, 1)
         }

@@ -5,6 +5,8 @@ import TimePicker from './TimePicker.vue'
 import DatePicker from './DatePicker.vue'
 import Menu from './Menu.vue'
 import Tags from './Tags.vue'
+import Affix from './Affix.vue'
+import Pagination from './Pagination.vue'
 
 const WebStyle = {
   Box,
@@ -13,7 +15,9 @@ const WebStyle = {
   TimePicker,
   DatePicker,
   Menu,
-  Tags
+  Tags,
+  Affix,
+  Pagination
 }
 
 window.WebStyle = WebStyle

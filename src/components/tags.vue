@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="input tags-wrap" @paste="pasteText($event)">
-    <div class="tags" transition="tags" :style="{backgroundColor: bgc[Math.ceil(Math.random() * 10) - 1]}" v-for="item in source">
+    <div class="tags" transition="tags" :style="{backgroundColor: bgc[Math.ceil(Math.random() * 10) - 1]}" v-for="item in source" track-by="$index">
       <span class="content">{{item}}</span><span class="del" @click="delTag($index, false)">&times;</span>
     </div>
     <input class="tags-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="addTag(text)" @keydown.delete="delTag(source.length - 1, true)">

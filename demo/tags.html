@@ -29,7 +29,7 @@
         <div class="row">
           <div class="label col-2">商品ids:</div>
           <div class="col-4">
-            <v-tags :source.sync="source" v-ref:tags1></v-tags>
+            <v-tags :source.sync="source"></v-tags>
           </div>
         </div>
 
@@ -57,7 +57,6 @@
     })
 
     setTimeout(function() {
-      app.$refs.tags1.init = true
       app.source = ['111', '222']
     }, 3000);
 

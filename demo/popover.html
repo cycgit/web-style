@@ -81,8 +81,8 @@
 
   </div>
 
-  <script src="../dist/js/vue.js"></script>
-  <script src="../src/js/popover.js"></script>
+  <script src="http://cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
+  <script src="../dist/js/web-style.js"></script>
   <script type="text/javascript">
     var btn = new Vue({
       el: '#app',
@@ -92,7 +92,7 @@
         popPlacement: 'top'
       },
       components: {
-        'v-popover': components.popover
+        'v-popover': WebStyle.Popover
       }
     })
   </script>

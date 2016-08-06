@@ -7,6 +7,8 @@ import Menu from './Menu.vue'
 import Tags from './Tags.vue'
 import Affix from './Affix.vue'
 import Pagination from './Pagination.vue'
+import Popover from './Popover.vue'
+import Tabs from './Tabs.vue'
 
 const WebStyle = {
   Box,
@@ -17,7 +19,9 @@ const WebStyle = {
   Menu,
   Tags,
   Affix,
-  Pagination
+  Pagination,
+  Popover,
+  Tabs
 }
 
 window.WebStyle = WebStyle

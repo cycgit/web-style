@@ -27,7 +27,8 @@ export default {
     return {
       text: '',
       bgc: ['#e961b4', '#ed664b', '#7b6ac7', '#56abd1', '#f7af4c', '#fe5467', '#52c7bd', '#a479b7', '#cb81ce', '#5eabc5'],
-      disSource: disSource
+      disSource: disSource,
+      init: false
     }
   },
   methods: {
@@ -58,14 +59,32 @@ export default {
         this.disSource.splice(index, 1)
       }
     }
+  },
+  watch: {
+    source () {
+      if (!this.init) {
+        return
+      } else {
+        var disSource = []
+        this.source.forEach(function (item) {
+          var obj = {
+            text: item,
+            bgc_no: Math.ceil(Math.random() * 10) - 1
+          }
+          disSource.push(obj)
+        })
+        this.disSource = disSource
+        this.init = false
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .tags-wrap{
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   outline: none;
   &::after{
     content: "";

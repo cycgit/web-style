@@ -1,7 +1,7 @@
 <template>
   <div class="menu" id="app">
     <div class="menu-top">
-      <h2>TMS系统</h2>
+      <h2>{{title}}</h2>
     </div>
   <div class="list" v-for="item in source">
     <div class="menu-line" @click="toggle(item)" :class="{'active-line': item.open}">
@@ -36,6 +36,10 @@
 
           return ar
         }
+      },
+      title: {
+        type: String,
+        default: '系统名称'
       }
     },
     data () {

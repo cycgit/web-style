@@ -29,7 +29,7 @@
         <div class="row">
           <div class="label col-2">商品ids:</div>
           <div class="col-4">
-            <v-tags :source.sync="source"></v-tags>
+            <v-tags :source.sync="source" v-ref:tags1></v-tags>
           </div>
         </div>
 
@@ -43,8 +43,8 @@
 
   </div>
 
-  <script src="../dist/js/vue.js"></script>
-  <script src="../src/js/tags.js"></script>
+  <script src="http://cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
+  <script src="../dist/js/web-style.js"></script>
   <script>
     var app = new Vue({
       el: '#app',
@@ -52,9 +52,15 @@
         source: ['英雄联盟', '骚猪', '对对对对对我是娇妹', '小轩在不在']
       },
       components: {
-        'v-tags': components.tags
+        'v-tags': WebStyle.Tags
       }
     })
+
+    setTimeout(function() {
+      app.$refs.tags1.init = true
+      app.source = ['111', '222']
+    }, 3000);
+
   </script>
 </body>
 </html>

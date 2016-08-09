@@ -1,5 +1,5 @@
 <template>
-  <div class="menu" id="app">
+  <div class="menu">
     <div class="menu-top">
       <h2>{{title}}</h2>
     </div>

@@ -15,11 +15,10 @@
         </div>
     </div>`
 
-  var element = document.createElement('div');
+  var element = document.createElement('div')
   element.id = 'V-message'
   element.innerHTML = template
   document.body.appendChild(element)
-
 
   var $message = new Vue({
     el: '#V-message',
@@ -30,24 +29,23 @@
       flag: ''
     },
     methods: {
-      success(content){
+      success (content) {
         this.appear(content, 1)
       },
-      error(content){
+      error (content) {
         this.appear(content, 2)
       },
-      appear(content, type){
+      appear (content, type) {
         this.content = content
         this.type = type
         this.show = true
         clearTimeout(this.flag)
-        this.flag = setTimeout(function(){
+        this.flag = setTimeout(function () {
           this.show = false
-        }.bind(this),2000)
+        }.bind(this), 2000)
       }
     }
   })
 
   window.$message = $message
-
 })(Vue, window)

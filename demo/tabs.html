@@ -18,16 +18,11 @@
   <div id="app">
     <v-tabs :source="source">
       <div v-for="item in source">{{item.content}}</div>
-      <!-- <div slot="slot-item-0">awefaw</div>
-      <div slot="slot-item-1"></div>
-      <div slot="slot-item-2"></div>
-      <div slot="slot-item-3"></div>
-      <div slot="slot-item-4"></div> -->
     </v-tabs>
   </div>
 
-  <script src="../dist/js/vue.js"></script>
-  <script src="../src/js/tabs.js"></script>
+  <script src="http://cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
+  <script src="../dist/js/web-style.js"></script>
   <script>
   var app = new Vue({
     el: '#app',
@@ -56,7 +51,7 @@
       ]
     },
     components: {
-      'v-tabs': components.tabs
+      'v-tabs': WebStyle.Tabs
     }
   })
   </script>
